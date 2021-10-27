@@ -10,12 +10,12 @@ $twig = new Twig\Environment($loader, [
 if ($_GET) {
     $url = explode('/', $_GET['url']);
 
-    if (file_exists(__DIR__ . "/app/view/{$url[0]}.twig")) {
-        echo $twig->render($url[0] . '.twig');
+    if (file_exists(__DIR__ . "/app/view/{$url[0]}.html")) {
+        echo $twig->render($url[0] . '.html');
     } else {
-        echo $twig->render('404.twig');
+        echo $twig->render('404.html');
     }
 
 } else {
-    echo $twig->render('home.twig');
+    echo $twig->render('home.html');
 }

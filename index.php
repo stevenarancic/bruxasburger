@@ -10,7 +10,7 @@ $twig = new Twig\Environment($loader, [
 if ($_GET) {
     $url = explode('/', $_GET['url']);
 
-    if (file_exists("app/view/{$url[0]}.twig")) {
+    if (file_exists(__DIR__ . "/app/view/{$url[0]}.twig")) {
         echo $twig->render($url[0] . '.twig');
     } else {
         echo $twig->render('404.twig');

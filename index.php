@@ -11,4 +11,6 @@ if ($_GET) {
     $url = explode('/', $_GET['url']);
 
     echo $twig->render($url[0] . '.twig');
+} else {
+    echo $twig->render('home.twig');
 }

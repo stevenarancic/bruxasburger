@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '9080e6a13b2c786f22919f034dc98dbd4bc2ba72',
         'name' => 'steve/bruxasburger',
         'dev' => true,
     ),
     'versions' => array(
         'steve/bruxasburger' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '9080e6a13b2c786f22919f034dc98dbd4bc2ba72',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(

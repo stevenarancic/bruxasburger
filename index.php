@@ -13,7 +13,7 @@ if ($_GET) {
     if (file_exists("app/view/{$url[0]}.twig")) {
         echo $twig->render($url[0] . '.twig');
     } else {
-        echo "AAAAAAAAAAAAA";
+        echo $twig->render('404.twig');
     }
 
 } else {

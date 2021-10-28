@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
+$filialDAO = new \app\model\filiais\FilialDAO();
+
 $loader = new Twig\Loader\FilesystemLoader(__DIR__ . '/app/view');
 $twig = new Twig\Environment($loader, [
     'cache' => __DIR__ . '/app/view/cache',
@@ -17,7 +19,7 @@ if ($_GET) {
     }
 
     if (file_exists(__DIR__ . "/app/view/{$urlDinamico}.html")) {
-        echo $twig->render("{$urlDinamico}.html");
+        echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO]);
     } else {
         echo $twig->render('404.html');
     }

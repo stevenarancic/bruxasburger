@@ -5,5 +5,9 @@
 {% block subtitle %}Gerenciamento de filiais{% endblock %}
 
 {% block content %}
-<a href="create" class="btn btn-success w-100">Cadastrar filial</a>
+
+<a href="create" class="btn btn-success w-100 mb-3">Cadastrar filial</a>
+
+{% include "structure/filiais/item_filial.html" %}
+
 {% endblock %}

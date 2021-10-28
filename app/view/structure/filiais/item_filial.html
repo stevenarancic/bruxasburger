@@ -1,10 +1,12 @@
-<div class="card mb-3 shadow-lg">
+<div class="card border-light mb-3 shadow-lg">
     <div class="card-body">
-        <h5 class="card-title">{{ foo.teste }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+        <img src="test.jpg" class="card-img-top" alt="Imagem indisponível :(">
+        <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{ filial.rua }} - {{ filial.numero }}, {{ filial.bairro }}
+        </h6>
+        <p class="card-text">{{ filial.telefone }}</p>
+        <a href="#" class="btn btn-light">Editar</a>
+        <a href="#" class="btn btn-danger">Apagar</a>
     </div>
 </div>

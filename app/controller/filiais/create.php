@@ -6,4 +6,4 @@ $filialDAO = new \app\model\filiais\FilialDAO();
 
 $filialDAO->createFilial($filial);
 
-header("location: ../../../gerenciamento/home");
+header("location: ../../../gerenciamento/filiais/home");

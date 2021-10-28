@@ -8,11 +8,10 @@
 
 <a href="create" class="btn btn-success w-100 mb-3">Cadastrar filial</a>
 
-{% set foo = {'teste': 'Teste'} %}
-
 {% for filial in filialDAO.readFilial %}
-{{ filial.telefone }}
-{% include "structure/filiais/item_filial.html" with foo %}
+
+{% include "structure/filiais/item_filial.html" %}
+
 {% endfor %}
 
 {% endblock %}

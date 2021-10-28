@@ -1,4 +1,5 @@
 <?php
+namespace app\model\filiais;
 
 use App\Model\Conexao;
 use app\model\filiais\Filial;

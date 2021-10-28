@@ -23,11 +23,16 @@
 <body>
 	<!-- {% include "gerenciamento/structure/header.html" %} -->
 
-	<div style="height: 100vh">
-		{% block content %}{% endblock %}
+	<div class="container" style="height: 100vh">
+		<h1 class="p-5 d-flex justify-content-center">
+			{% block subtitle %}{% endblock %}
+		</h1>
+
+		{% block content %}
+		{% endblock %}
 	</div>
 
-	{% include "structure/header.html" %}
+	{% include "structure/footer.html" %}
 
 	<!-- JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

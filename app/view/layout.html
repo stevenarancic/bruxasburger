@@ -18,30 +18,89 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"
     />
 
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
-    <header>
-      <a href="#" class="logo">Logo</a>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Cardápio</a></li>
-        <li><a href="#">Filiais</a></li>
-        <li><a href="#">Sobre nós</a></li>
-      </ul>
-    </header>
-    <section class="container">{% block content %}{% endblock %}</section>
+    <nav class="nav">
+      <div class="container">
+        <div class="logo">
+          <a href="#">Your Logo</a>
+        </div>
+        <div id="mainListDiv" class="main_list">
+          <ul class="navlinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Cardápio</a></li>
+            <li><a href="#">Filiais</a></li>
+            <li><a href="#">Sobre nós</a></li>
+          </ul>
+        </div>
+        <span class="navTrigger">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+      </div>
+    </nav>
+
+    <section class="home"></section>
+    <div style="height: 1000px">
+      <!-- Texto aleatório pra usar as classes criadas pelo xesque e para ter o scroll. -->
+      <h2 class="myH2">What is this ?</h2>
+      <p class="myP">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione
+        facere animi impedit rem labore sint repellendus ipsa sapiente
+        voluptatem aut excepturi quo itaque, ab earum cumque. Voluptatem beatae
+        id inventore quod voluptate qui deserunt, quis placeat, tempora ex
+        totam, dolore sequi harum eos voluptatibus animi labore officiis minus
+        laboriosam Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Ipsum ratione facere animi impedit rem labore sint repellendus ipsa
+        sapiente voluptatem aut excepturi quo itaque, ab earum cumque.
+        Voluptatem beatae id inventore quod voluptate qui deserunt, quis
+        placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi
+        labore officiis minus laboriosam Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Ipsum ratione facere animi impedit rem labore sint
+        repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum
+        cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis
+        placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi
+        labore officiis minus laboriosam Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Ipsum ratione facere animi impedit rem labore sint
+        repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum
+        cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis
+        placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi
+        labore officiis minus laboriosam Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Ipsum ratione facere animi impedit rem labore sint
+        repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum
+        cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis
+        placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi
+        labore officiis minus laboriosam
+      </p>
+    </div>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="assets/js/scripts.js"></script>
+
+    <!-- Função para remover o padding e colocar o background escuro no navbar -->
+    <script>
+      $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+          $(".nav").addClass("affix");
+          console.log("OK");
+        } else {
+          $(".nav").removeClass("affix");
+        }
+      });
+    </script>
 
     <!-- Bootstrap scripts -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    <!-- JQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.js"
-      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
       crossorigin="anonymous"
     ></script>
   </body>

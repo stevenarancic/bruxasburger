@@ -31,10 +31,10 @@
         </div>
         <div id="mainListDiv" class="main_list">
           <ul class="navlinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Cardápio</a></li>
-            <li><a href="#">Filiais</a></li>
-            <li><a href="#">Sobre nós</a></li>
+            <li><a href="home">Home</a></li>
+            <li><a href="cardapio">Cardápio</a></li>
+            <li><a href="filiais">Filiais</a></li>
+            <li><a href="sobre">Sobre nós</a></li>
           </ul>
         </div>
         <span class="navTrigger">
@@ -46,38 +46,8 @@
     </nav>
     <!-- Essa section tem a imagem de fundo e por causa dela o nav fica em cima mesmo sem scrollar. Se tirar ela o nav só aparece depois que vc scrolla -->
     <section class="home"></section>
-    <div style="height: 100vh">
-      <!-- Texto aleatório pra usar as classes criadas pelo xesque e para ter o scroll. -->
-      <h2 class="myH2">What is this ?</h2>
-      <p class="myP">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione
-        facere animi impedit rem labore sint repellendus ipsa sapiente
-        voluptatem aut excepturi quo itaque, ab earum cumque. Voluptatem beatae
-        id inventore quod voluptate qui deserunt, quis placeat, tempora ex
-        totam, dolore sequi harum eos voluptatibus animi labore officiis minus
-        laboriosam Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        Ipsum ratione facere animi impedit rem labore sint repellendus ipsa
-        sapiente voluptatem aut excepturi quo itaque, ab earum cumque.
-        Voluptatem beatae id inventore quod voluptate qui deserunt, quis
-        placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi
-        labore officiis minus laboriosam Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Ipsum ratione facere animi impedit rem labore sint
-        repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum
-        cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis
-        placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi
-        labore officiis minus laboriosam Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Ipsum ratione facere animi impedit rem labore sint
-        repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum
-        cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis
-        placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi
-        labore officiis minus laboriosam Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Ipsum ratione facere animi impedit rem labore sint
-        repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum
-        cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis
-        placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi
-        labore officiis minus laboriosam
-      </p>
-    </div>
+
+    <div style="height: 100vh">{% block content %}{% endblock %}</div>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

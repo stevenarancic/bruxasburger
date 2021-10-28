@@ -12,6 +12,16 @@ class Filial
     private $rua;
     private $numero;
 
+    public function __construct($telefone, $uf, $cidade, $bairro, $rua, $numero)
+    {
+        $this->setTelefone($telefone);
+        $this->setUf($uf);
+        $this->setCidade($cidade);
+        $this->setBairro($bairro);
+        $this->setRua($rua);
+        $this->setNumero($numero);
+    }
+
     /**
      * Get the value of id
      */

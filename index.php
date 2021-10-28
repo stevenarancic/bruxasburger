@@ -11,10 +11,14 @@ if ($_GET) {
     $url = explode('/', $_GET['url']);
 
     if (str_contains($_GET['url'], "gerenciamento")) {
-        if (file_exists(__DIR__ . "/app/view/{$url[0]}/{$url[1]}.html")) {
-            echo $twig->render("{$url[0]}/$url[1].html");
+        if ($url[1] == "") {
+            echo $twig->render("{$url[0]}/home.html");
         } else {
-            echo $twig->render('404.html');
+            if (file_exists(__DIR__ . "/app/view/{$url[0]}/{$url[1]}.html")) {
+                echo $twig->render("{$url[0]}/$url[1].html");
+            } else {
+                echo $twig->render('404.html');
+            }
         }
     } else {
         if (file_exists(__DIR__ . "/app/view/{$url[0]}.html")) {

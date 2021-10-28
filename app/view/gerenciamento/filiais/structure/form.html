@@ -1,28 +1,31 @@
 <!-- Depois deixar o create "mudavel" para também poder ser um update.php -->
-<form action="../../../../bruxasburger/app/controller/filiais/create.php" method="post">
-    <a href="home" class="btn btn-light mb-3">Voltar</a>
+<form action="../../../../bruxasburger/app/controller/filiais/{{ condicional }}.php" method="post">
     <div class="form-floating mb-3">
-        <input type="tel" class="form-control" placeholder=" " name="telefone">
+        <input type="tel" class="form-control" placeholder=" " name="telefone" value="{{ filial.telefone }}">
         <label for="floatingInput">Telefone</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" placeholder=" " name="uf">
+        <input type="text" class="form-control" placeholder=" " name="uf" value="{{ filial.uf }}">
         <label for="">UF</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" placeholder=" " name="cidade">
+        <input type="text" class="form-control" placeholder=" " name="cidade" value="{{ filial.cidade }}">
         <label for="">Cidade</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" placeholder=" " name="bairro">
+        <input type="text" class="form-control" placeholder=" " name="bairro" value="{{ filial.bairro }}">
         <label for="">Bairro</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" placeholder=" " name="rua">
+        <input type="text" class="form-control" placeholder=" " name="rua" value="{{ filial.rua }}">
         <label for="">Rua</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="number" class="form-control" placeholder=" " name="numero">
+        <input type="number" class="form-control" placeholder=" " name="numero" value="{{ filial.numero }}">
+        <label for="">Número</label>
+    </div>
+    <div class="form-floating mb-3 d-none">
+        <input type="number" class="form-control" placeholder=" " name="id" value="{{ filial.id }}">
         <label for="">Número</label>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

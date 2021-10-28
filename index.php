@@ -9,6 +9,16 @@ $twig = new Twig\Environment($loader, [
     'cache' => false,
 ]);
 
+if (isset($_GET['id']) and $_GET['id'] != "") {
+    foreach ($filialDAO->filtrarFilial($_GET['id']) as $key => $filial) {
+        echo $twig->render("gerenciamento/filiais/update.html", ['filial' => $filial]);
+    }
+}
+
+if (isset($_GET['id_delete']) and $_GET['id_delete'] != "") {
+    header("location: app/controller/filiais/delete.php?id_delete={$_GET['id_delete']}");
+}
+
 if ($_GET) {
     $url = explode('/', $_GET['url']);
 

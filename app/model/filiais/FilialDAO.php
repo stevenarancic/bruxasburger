@@ -36,6 +36,23 @@ class FilialDAO
         }
     }
 
+    public function filtrarFilial($id)
+    {
+        $sql = "SELECT * FROM filial WHERE id = :id";
+
+        $stmt = Conexao::getInstance()->prepare($sql);
+
+        $stmt->bindValue(':id', $id);
+
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } else {
+            return "Filial não encontrada :(";
+        }
+    }
+
     public function updateFilial(Filial $filial)
     {
         $sql = "UPDATE filial SET telefone = :telefone, uf = :uf, cidade = :cidade, bairro = :bairro, rua = :rua, numero = :numero WHERE id = :id";
@@ -48,6 +65,7 @@ class FilialDAO
         $stmt->bindValue(':bairro', $filial->getBairro());
         $stmt->bindValue(':rua', $filial->getRua());
         $stmt->bindValue(':numero', $filial->getNumero());
+        $stmt->bindValue(':id', $filial->getId());
 
         $stmt->execute();
     }

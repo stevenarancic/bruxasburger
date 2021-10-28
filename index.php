@@ -10,22 +10,16 @@ $twig = new Twig\Environment($loader, [
 if ($_GET) {
     $url = explode('/', $_GET['url']);
 
-    if (str_contains($_GET['url'], "gerenciamento")) {
-        if ($url[1] == "") {
-            echo $twig->render("{$url[0]}/home.html");
-        } else {
-            if (file_exists(__DIR__ . "/app/view/{$url[0]}/{$url[1]}.html")) {
-                echo $twig->render("{$url[0]}/$url[1].html");
-            } else {
-                echo $twig->render('404.html');
-            }
-        }
+    $urlDinamico = "";
+
+    for ($i = 0; $i < count($url); $i++) {
+        $urlDinamico = implode('/', $url);
+    }
+
+    if (file_exists(__DIR__ . "/app/view/{$urlDinamico}.html")) {
+        echo $twig->render("{$urlDinamico}.html");
     } else {
-        if (file_exists(__DIR__ . "/app/view/{$url[0]}.html")) {
-            echo $twig->render($url[0] . '.html');
-        } else {
-            echo $twig->render('404.html');
-        }
+        echo $twig->render('404.html');
     }
 } else {
     echo $twig->render('home.html');

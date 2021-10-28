@@ -30,7 +30,7 @@ class FilialDAO
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         } else {
             echo "Nenhuma filial foi cadastrada :(";
         }

@@ -5,6 +5,7 @@ Home
 {% endblock %}
 
 {% block content %}
+<h2 class="text-center mt-5 mb-4">Quem somos</h2>
 <p class="myP">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tortor est, laoreet at sollicitudin id, fringilla
     tristique tortor. Vivamus condimentum efficitur orci tempus tincidunt. Quisque non laoreet diam. Vivamus sit amet
@@ -40,4 +41,15 @@ Home
     imperdiet dolor non dapibus. Vivamus porta pretium tellus, sit amet dictum eros vulputate a. Sed commodo ac tortor
     et iaculis.
 </p>
+<h2 class="text-center mt-4">Encontre um Bruxas perto de você</h2>
+<div class="owl-carousel owl-theme">
+    {% for filial in filialDAO.readFilial %}
+    <div class="item">
+        {% include "structure/filiais/carousel_filial.html" %}
+    </div>
+    {% endfor %}
+</div>
+<div class="d-flex justify-content-center">
+    <a href="filiais" class="btn btn-primary">Ver todos</a>
+</div>
 {% endblock %}

@@ -8,10 +8,11 @@
 
 <a href="create" class="btn btn-success w-100 mb-3">Cadastrar filial</a>
 
-<section class="row">
+<div>
     {% for filial in filialDAO.readFilial %}
     {% include "gerenciamento/filiais/structure/item_filial.html" %}
     {% endfor %}
-</section>
+</div>
+
 
 {% endblock %}

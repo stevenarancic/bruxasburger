@@ -343,8 +343,6 @@ body {
 }
 .myP {
   text-align: justify;
-  padding-left: 15%;
-  padding-right: 15%;
   font-size: 20px;
 }
 @media all and (max-width: 700px) {

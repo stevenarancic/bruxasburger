@@ -5,11 +5,12 @@ Filiais
 {% endblock %}
 
 {% block content %}
-
-{% for filial in filialDAO.readFilial %}
-
-{% include "structure/filiais/item_filial.html" %}
-
-{% endfor %}
+<section class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for filial in filialDAO.readFilial %}
+        {% include "structure/filiais/item_filial.html" %}
+        {% endfor %}
+    </div>
+</section>
 
 {% endblock %}

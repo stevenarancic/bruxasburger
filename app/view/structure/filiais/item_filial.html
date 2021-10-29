@@ -1,12 +1,13 @@
-<div class="card border-light mb-3 shadow-lg">
+<div class="card border-light mb-3 shadow-lg col-sm-12 col-md-4 col-lg-4">
     <div class="card-body">
-        <img src="test.jpg" class="card-img-top" alt="Imagem indisponível :(">
+        <div class="card-img-top">
+        </div>
         <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">
             {{ filial.rua }} - {{ filial.numero }}, {{ filial.bairro }}
         </h6>
-        <p class="card-text">{{ filial.telefone }}</p>
-        <a href="../../../../bruxasburger/index.php?id={{ filial.id }}" class="btn btn-light">Editar</a>
-        <a href="../../../../bruxasburger/index.php?id_delete={{ filial.id }}" class="btn btn-danger">Apagar</a>
+        <a href="https://api.whatsapp.com/send?phone={{ filial.telefone }}" class="btn btn-success">
+            <i class="bi bi-whatsapp"></i> Chamar no Whatsapp
+        </a>
     </div>
 </div>

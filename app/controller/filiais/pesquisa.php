@@ -1,6 +1,6 @@
 <?php
 
-use App\Model\Conexao;
+use app\model\Conexao;
 
 require_once __DIR__ . "../../../../vendor/autoload.php";
 

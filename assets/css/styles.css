@@ -33,7 +33,7 @@ body {
 }
 
 .nav div.logo a:hover {
-  color: #00e676;
+  color: #f3e84e;
 }
 
 .nav div.main_list {
@@ -65,7 +65,7 @@ body {
 }
 
 .nav div.main_list ul li a:hover {
-  color: #00e676;
+  color: #f3e84e;
 }
 
 /* Home section */
@@ -83,8 +83,8 @@ body {
 }
 
 .nav {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }

@@ -1,32 +1,34 @@
-<nav class="nav" style="z-index: 999;">
-    <div class="container">
-        <div class="logo">
-            <a href="#">Your Logo</a>
+<nav class="nav bg-danger" style="z-index: 999;">
+    <div class="container-fluid bg-danger">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Your Logo</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li>
+                        <a href="home">Home</a>
+                    </li>
+                    <li>
+                        <a href="cardapio">Cardápio</a>
+                    </li>
+                    <li>
+                        <a href="filiais">Filiais</a>
+                    </li>
+                    <li>
+                        <a href="sobre">Sobre nós</a>
+                    </li>
+                    <li>
+                        <button id="teste" onclick="scrollar()">Teste</button>
+                    </li>
+                </ul>
+            </div>
+            <span class="navTrigger" style="position: relative; right: -40%; top: 30%;">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
         </div>
-        <div id="mainListDiv" class="main_list">
-            <ul class="navlinks">
-                <li>
-                    <a href="home">Home</a>
-                </li>
-                <li>
-                    <a href="cardapio">Cardápio</a>
-                </li>
-                <li>
-                    <a href="filiais">Filiais</a>
-                </li>
-                <li>
-                    <a href="sobre">Sobre nós</a>
-                </li>
-                <li>
-                    <button id="teste" onclick="scrollar()">Teste</button>
-                </li>
-            </ul>
-        </div>
-        <span class="navTrigger" style="position: relative; right: -40%; top: 30%;">
-            <i></i>
-            <i></i>
-            <i></i>
-        </span>
     </div>
 </nav>
 <!-- Essa section tem a imagem de fundo e por causa dela o nav fica em cima mesmo sem scrollar. Se tirar ela o nav só aparece depois que vc scrolla -->

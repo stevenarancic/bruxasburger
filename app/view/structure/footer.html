@@ -1,5 +1,9 @@
-<footer>
-    <div class="p-5 bg-danger mt-5">
-        <h2>Footer</h2>
+<footer class="p-5 bg-danger mt-4 text-white">
+    <div class="container">
+        <h2 id="footer-title"></h2>
     </div>
+
+    <script>
+        document.getElementById('footer-title').innerHTML = "&copy; Bruxas Burger " + new Date().getFullYear();;
+    </script>
 </footer>

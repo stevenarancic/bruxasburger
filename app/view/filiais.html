@@ -5,14 +5,14 @@ Filiais
 {% endblock %}
 
 {% block content %}
-<section class="container">
-    Filiais
+<section class="container col-sm-12 col-md-7 col-lg-7">
+    <h2 class="mt-4">Filiais</h2>
+
+    <div class="w-100 d-flex align-items-center mb-3">
+        <input type="text" class="form-control" id="search" placeholder="Pesquise sua cidade">
+    </div>
+
+    <div id="output"></div>
 </section>
-
-<div class="w-100 me-3 ms-3 d-flex align-items-center">
-    <input type="text" class="form-control" id="search" placeholder="Pesquise por um registro">
-</div>
-
-<div id="output"></div>
 
 {% endblock %}

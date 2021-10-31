@@ -14,6 +14,7 @@ $stmt->execute();
 
 if ($stmt->rowCount() > 0) {
     header("location: ../../../gerenciamento/home");
+    $_SESSION['logado'] = true;
 } else {
     echo "Login incorreto!";
 }

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 $filialDAO = new \app\model\filiais\FilialDAO();
@@ -29,6 +31,15 @@ if ($_GET) {
     }
 
     if (file_exists(__DIR__ . "/app/view/{$urlDinamico}.html")) {
+        $search = 'gerenciamento';
+
+        if (preg_match("/{$search}/i", $urlDinamico)) {
+            if (!isset($_SESSION['logado'])) {
+                echo $twig->render("gerenciamento/login.html");
+            } else {
+                echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO]);
+            }
+        }
         echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO]);
     } else {
         echo $twig->render('404.html');

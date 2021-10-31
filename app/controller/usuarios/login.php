@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../../../vendor/autoload.php';
 
 use app\model\Conexao;
@@ -14,7 +16,7 @@ $stmt->execute();
 
 if ($stmt->rowCount() > 0) {
     header("location: ../../../gerenciamento/home");
-    $_SESSION['logado'] = true;
+    $_SESSION['logado'] = "logado";
 } else {
     echo "Login incorreto!";
 }

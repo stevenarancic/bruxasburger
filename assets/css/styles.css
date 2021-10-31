@@ -7,10 +7,6 @@ body {
   font-family: "Quicksand", sans-serif;
   font-size: 1em;
 }
-/*-- Inspiration taken from abdo steif -->
-/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
-
-/* Navbar section */
 
 .nav {
   width: 100%;
@@ -139,9 +135,6 @@ body {
   }
 }
 
-/* Animation */
-/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
-
 .navTrigger {
   cursor: pointer;
   width: 30px;
@@ -197,6 +190,30 @@ body {
 .navTrigger.active i:nth-child(3) {
   -webkit-animation: inBtm 0.8s forwards;
   animation: inBtm 0.8s forwards;
+}
+a {
+  position: relative;
+  text-decoration: none;
+  color: #a0a0a0;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+a:after {
+  content: "";
+  position: absolute;
+  background-color: #f3e84e;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+a:hover {
+  color: #ffffff;
+}
+a:hover:after {
+  width: 100%;
 }
 
 @-webkit-keyframes inM {
@@ -344,6 +361,21 @@ body {
   text-align: justify;
   font-size: 20px;
 }
+
+.my_bttn {
+  height: 45px;
+  width: 45px;
+  border: none;
+  color: white;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  display: none;
+}
+
 @media all and (max-width: 700px) {
   .myP {
     padding: 2%;

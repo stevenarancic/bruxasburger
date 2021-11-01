@@ -2,8 +2,30 @@
 
 {% block title %}Categorias{% endblock %}
 
-{% block subtitle %}Categorias{% endblock %}
+{% block subtitle %}Gerenciamento de Categorias{% endblock %}
 
 {% block content %}
-teste
+
+<a href="../home" class="btn btn-light">Voltar</a>
+
+<button class="btn btn-primary" onclick="hideShowCategoria()">
+    <i class="bi bi-plus-lg"></i>
+</button>
+
+<div id="div_create_categoria">
+    <form action="../../../app/controller/categorias/create.php" method="post" class="d-flex flex-row">
+        Nome:
+        <input type="text" name="nome" class="form-control ms-2" style="width: 200px;">
+        Icone:
+        <input type="text" name="icone" class="form-control ms-2" style="width: 200px;">
+        <button class="btn btn-success ms-3">
+            <i class="bi bi-check-lg"></i>
+        </button>
+    </form>
+</div>
+
+<div>
+
+</div>
+
 {% endblock %}

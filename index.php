@@ -5,6 +5,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $filialDAO = new \app\model\filiais\FilialDAO();
 $categoriaDAO = new \app\model\categorias\CategoriaDAO();
+$itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 
 $loader = new Twig\Loader\FilesystemLoader(__DIR__ . '/app/view');
 $twig = new Twig\Environment($loader, [
@@ -48,10 +49,10 @@ if ($_GET) {
             if (!isset($_SESSION['logado'])) {
                 echo $twig->render("gerenciamento/login.html");
             } else {
-                echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO]);
+                echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO, 'itemCardapioDAO' => $itemCardapioDAO]);
             }
         } else {
-            echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO]);
+            echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO, 'itemCardapioDAO' => $itemCardapioDAO]);
         }
     } else {
         echo $twig->render('404.html');

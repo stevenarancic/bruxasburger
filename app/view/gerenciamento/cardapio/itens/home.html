@@ -8,22 +8,6 @@
 
 <a href="../home" class="btn btn-light">Voltar</a>
 
-<div class="card mb-3">
-    <div class=" row g-0">
-        <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">Xlaba Completo</h5>
-                <small class="text-muted">Hambúrguer</small>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <a href="../../../../bruxasburger/index.php?id={{ filial.id }}" class="btn btn-light">Editar</a>
-                <a href="../../../../bruxasburger/index.php?id_delete={{ filial.id }}" class="btn btn-danger">Apagar</a>
-            </div>
-        </div>
-    </div>
-</div>
+{% include "gerenciamento/cardapio/itens/structure/item_item_cardapio.html" %}
 
 {% endblock %}

@@ -1,0 +1,12 @@
+<!-- Depois deixar o create "mudavel" para também poder ser um update.php -->
+<form action="../../../app/controller/categorias/{{ condiicional }}.php" method="post">
+    <div class="form-floating mb-3">
+        <input type="tel" class="form-control" placeholder=" " name="telefone" value="{{ filial.telefone }}">
+        <label for="floatingInput">Telefone</label>
+    </div>
+    <div class="form-floating mb-3 d-none">
+        <input type="number" class="form-control" placeholder=" " name="id" value="{{ filial.id }}">
+        <label for="">Número</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

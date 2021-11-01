@@ -7,7 +7,7 @@ use PDO;
 
 class CategoriaDAO
 {
-    public function create(Categoria $categoria)
+    public function createCategoria(Categoria $categoria)
     {
         $sql = "INSERT INTO cardapio_categoria(nome, icone) VALUES(:nome, :icone)";
 
@@ -19,7 +19,7 @@ class CategoriaDAO
         $stmt->execute();
     }
 
-    public function read()
+    public function readCategoria()
     {
         $sql = "SELECT * FROM cardapio_categoria";
 
@@ -33,7 +33,7 @@ class CategoriaDAO
         }
     }
 
-    public function update(Categoria $categoria)
+    public function updateCategoria(Categoria $categoria)
     {
         $sql = "UPDATE cardapio_categoria SET nome = :nome, icone = :icone WHERE id = :id";
 
@@ -45,7 +45,7 @@ class CategoriaDAO
         $stmt->execute();
     }
 
-    public function delete($id)
+    public function deleteCategoria($id)
     {
         $sql = "DELETE FROM cardapio_categoria WHERE id = :id";
 

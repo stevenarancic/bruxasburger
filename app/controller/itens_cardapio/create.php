@@ -1,9 +1,9 @@
 <?php
 require_once __DIR__ . "../../../../vendor/autoload.php";
 
-$filial = new \app\model\filiais\Filial($_POST['telefone'], $_POST['uf'], $_POST['cidade'], $_POST['bairro'], $_POST['rua'], $_POST['numero']);
-$filialDAO = new \app\model\filiais\FilialDAO();
+$itemCardapio = new \app\model\itens_cardapio\ItemCardapio($_POST['nome'], $_POST['descricao']);
 
-$filialDAO->createFilial($filial);
+$itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
+$itemCardapioDAO->createItemCardapio($itemCardapio);
 
-header("location: ../../../gerenciamento/filiais/home");
+header("location: ../../../gerenciamento/cardapio/itens/home");

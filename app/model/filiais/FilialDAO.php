@@ -1,4 +1,5 @@
 <?php
+
 namespace app\model\filiais;
 
 use app\model\Conexao;
@@ -32,7 +33,7 @@ class FilialDAO
         if ($stmt->rowCount() > 0) {
             return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         } else {
-            echo "Nenhuma filial foi cadastrada :(";
+            return "Nenhuma filial foi cadastrada :(";
         }
     }
 

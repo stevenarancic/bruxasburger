@@ -39,8 +39,9 @@ if ($_GET) {
             } else {
                 echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO]);
             }
+        } else {
+            echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO]);
         }
-        echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO]);
     } else {
         echo $twig->render('404.html');
     }

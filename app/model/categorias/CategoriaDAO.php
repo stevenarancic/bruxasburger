@@ -9,7 +9,7 @@ class CategoriaDAO
 {
     public function create(Categoria $categoria)
     {
-        $sql = "INSERT INTO categoria(nome, icone) VALUES(:nome, :icone)";
+        $sql = "INSERT INTO cardapio_categoria(nome, icone) VALUES(:nome, :icone)";
 
         $stmt = Conexao::getInstance()->prepare($sql);
 
@@ -21,7 +21,7 @@ class CategoriaDAO
 
     public function read()
     {
-        $sql = "SELECT * FROM categoria";
+        $sql = "SELECT * FROM cardapio_categoria";
 
         $stmt = Conexao::getInstance()->prepare($sql);
         $stmt->execute();
@@ -35,7 +35,7 @@ class CategoriaDAO
 
     public function update(Categoria $categoria)
     {
-        $sql = "UPDATE categoria SET nome = :nome, icone = :icone WHERE id = :id";
+        $sql = "UPDATE cardapio_categoria SET nome = :nome, icone = :icone WHERE id = :id";
 
         $stmt = Conexao::getInstance()->prepare($sql);
 
@@ -47,7 +47,7 @@ class CategoriaDAO
 
     public function delete($id)
     {
-        $sql = "DELETE FROM categoria WHERE id = :id";
+        $sql = "DELETE FROM cardapio_categoria WHERE id = :id";
 
         $stmt = Conexao::getInstance()->prepare($sql);
 

@@ -33,6 +33,23 @@ class CategoriaDAO
         }
     }
 
+    public function filtrarCategoria($id)
+    {
+        $sql = "SELECT * FROM cardapio_categoria WHERE id = :id";
+
+        $stmt = Conexao::getInstance()->prepare($sql);
+
+        $stmt->bindValue(':id', $id);
+
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } else {
+            return "Categoria não encontrada :(";
+        }
+    }
+
     public function updateCategoria(Categoria $categoria)
     {
         $sql = "UPDATE cardapio_categoria SET nome = :nome, icone = :icone WHERE id = :id";
@@ -41,6 +58,7 @@ class CategoriaDAO
 
         $stmt->bindValue(':nome', $categoria->getNome());
         $stmt->bindValue(':icone', $categoria->getIcone());
+        $stmt->bindValue(':id', $categoria->getId());
 
         $stmt->execute();
     }

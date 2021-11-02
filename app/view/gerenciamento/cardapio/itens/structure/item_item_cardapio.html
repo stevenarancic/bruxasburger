@@ -10,10 +10,11 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{ itemCardapio.nome }}</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <a href="../../../index.php?id_update_itemcardapio={{ categoria.id }}" class="btn btn-light">Editar</a>
-                <a href="../../../index.php?id_delete_categoria={{ categoria.id }}" class="btn btn-danger">Apagar</a>
+                <p class="card-text">{{ itemCardapio.descricao }}.</p>
+                <a href="../../../index.php?id_update_itemcardapio={{ itemCardapio.id }}"
+                    class="btn btn-light">Editar</a>
+                <a href="../../../index.php?id_delete_itemcardapio={{ itemCardapio.id }}"
+                    class="btn btn-danger">Apagar</a>
             </div>
         </div>
     </div>

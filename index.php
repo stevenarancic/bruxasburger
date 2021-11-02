@@ -29,6 +29,11 @@ if (isset($_GET['id_delete_categoria']) and $_GET['id_delete_categoria'] != "") 
 }
 
 // Item Cardápio
+if (isset($_GET['id_update_itemcardapio']) and $_GET['id_update_itemcardapio'] != "") {
+    foreach ($itemCardapioDAO->filtrarItemCardapio($_GET['id_update_itemcardapio']) as $key => $itemCardapio) {
+        echo $twig->render("gerenciamento/cardapio/itens/update.html", ['itemCardapio' => $itemCardapio]);
+    }
+}
 if (isset($_GET['id_delete_itemcardapio']) and $_GET['id_delete_itemcardapio'] != "") {
     header("location: app/controller/itens_cardapio/delete.php?id_delete_itemcardapio={$_GET['id_delete_itemcardapio']}");
 }

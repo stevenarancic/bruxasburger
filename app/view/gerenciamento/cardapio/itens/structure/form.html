@@ -1,0 +1,17 @@
+<!-- Depois deixar o create "mudavel" para também poder ser um update.php -->
+<form action="../../../../bruxasburger/app/controller/itens_cardapio/{{ condicional }}.php" method="post">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder=" " name="nome" value="{{ itemCardapio.nome }}">
+        <label for="floatingInput">Nome</label>
+    </div>
+    <div class="form-floating mb-3">
+        <textarea class="form-control" placeholder=" " style="height: 8em"
+            name="descricao">{{ itemCardapio.descricao }}</textarea>
+        <label for="">Descrição</label>
+    </div>
+    <div class="form-floating mb-3 d-none">
+        <input type="text" class="form-control" placeholder=" " name="id" value="{{ itemCardapio.id }}">
+        <label for="floatingInput">Id</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+</form>

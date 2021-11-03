@@ -4,7 +4,7 @@ use app\model\Conexao;
 
 require_once __DIR__ . "../../../../vendor/autoload.php";
 
-$sql = "SELECT * FROM cardapio_item INNER JOIN cardapio_categoria ON cardapio_item.categoria_id = cardapio_categoria.id WHERE cardapio_categoria.nome LIKE '%{$_POST['select_categoria']}%'";
+$sql = "SELECT *, item.nome as itemnome FROM cardapio_item as item INNER JOIN cardapio_categoria as categoria ON item.categoria_id = categoria.id WHERE categoria.nome LIKE '%{$_POST['select_categoria']}%'";
 $stmt = Conexao::getInstance()->prepare($sql);
 $stmt->execute();
 
@@ -19,10 +19,10 @@ if ($stmt->rowCount() > 0) {
                 </div>
                 <div class=\"col-md-8\">
                     <div class=\"card-header\">
-                        Hambúrguer
+                        {$item['nome']}
                     </div>
                     <div class=\"card-body\">
-                        <h5 class=\"card-title\">{$item['nome']}</h5>
+                        <h5 class=\"card-title\">{$item['itemnome']}</h5>
                         <p class=\"card-text\">{$item['descricao']}.</p>
                     </div>
                 </div>

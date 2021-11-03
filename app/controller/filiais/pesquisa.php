@@ -24,7 +24,7 @@ if ($stmt->rowCount() > 0) {
                             {$item['rua']} - {$item['numero']}, {$item['bairro']}
                         </h6>
                         <p class=\"card-text\">{$item['telefone']}</p>
-                        <a href=\"https://api.whatsapp.com/send?phone={$item['telefone']}\" class=\"btn btn-success w-100\">
+                        <a href=\"https://api.whatsapp.com/send?phone={$item['telefone']}\" class=\"btn btn-success w-100\" style=\"position: inherit\">
                             <i class=\"bi bi-whatsapp\"></i> Chamar no Whatsapp
                         </a>
                     </div>

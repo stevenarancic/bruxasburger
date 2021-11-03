@@ -1,13 +1,14 @@
-<div class="col">
-    <div class="card shadow ms-3 me-3 mb-4 mt-4">
+<div class="col" style="position: inherit;">
+    <div class="card shadow ms-3 me-3 mb-4 mt-4" style="position: inherit;">
         <img src="https://www.sabornamesa.com.br/media/k2/items/cache/b9ad772005653afce4d4bd46c2efe842_XL.jpg"
-            class="card-img-top" alt="...">
+            class="card-img-top" alt="..." style="height: 25em; object-fit: cover">
         <div class="card-body">
             <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">
                 {{ filial.rua }} - {{ filial.numero }}, {{ filial.bairro }}
             </h6>
-            <a href="https://api.whatsapp.com/send?phone={{ filial.telefone }}" class="btn btn-success w-100">
+            <a href="https://api.whatsapp.com/send?phone={{ filial.telefone }}" class="btn btn-success w-100"
+                style="position: inherit;">
                 <i class="bi bi-whatsapp"></i> Chamar no Whatsapp
             </a>
         </div>

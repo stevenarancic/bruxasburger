@@ -11,7 +11,7 @@ $stmt->execute();
 if ($stmt->rowCount() > 0) {
     foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $key => $item) {
         echo "
-        <div class=\"card mb-3\">
+        <div class=\"card mb-3\" style=\"position: inherit\">
             <div class=\" row g-0\">
                 <div class=\"col-md-4\">
                     <img src=\"https://acarnequeomundoprefere.com.br/uploads/media/image/frimesa-receita-hamburguer-suino_smlr.jpg\"

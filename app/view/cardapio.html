@@ -27,23 +27,6 @@ Cardápio
     </div>
 
     <div id="output_cardapio_categoria"></div>
-
-    <!-- Pesquisa cardápio por categoria -->
-    <script type="text/javascript">
-        function jsfunction(sel) {
-            texto = sel.options[sel.selectedIndex].text;
-            $.ajax({
-                type: 'POST',
-                url: '/bruxasburger/app/controller/itens_cardapio/pesquisa_por_categoria.php',
-                data: {
-                    select_categoria: texto,
-                },
-                success: function (data) {
-                    $("#output_cardapio").html(data);
-                }
-            });
-        }
-    </script>
 </section>
 
 {% endblock %}

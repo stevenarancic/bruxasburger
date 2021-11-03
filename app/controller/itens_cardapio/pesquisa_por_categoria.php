@@ -19,7 +19,7 @@ if ($stmt->rowCount() > 0) {
                 </div>
                 <div class=\"col-md-8\">
                     <div class=\"card-header\">
-                        {$item['nome']}
+                        {$item['nome']}&#{$item['icone']};
                     </div>
                     <div class=\"card-body\">
                         <h5 class=\"card-title\">{$item['item_nome']}</h5>

@@ -98,7 +98,7 @@
 		});
 	</script>
 
-	<!-- Filiais -->
+	<!-- Pesquisa filiais -->
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$("#search").keypress(function () {
@@ -156,6 +156,23 @@
 				}
 			});
 		});
+	</script>
+
+	<!-- Pesquisa cardápio por categoria -->
+	<script type="text/javascript">
+		function jsfunction(sel) {
+			texto = sel.options[sel.selectedIndex].value;
+			$.ajax({
+				type: 'POST',
+				url: '/bruxasburger/app/controller/itens_cardapio/pesquisa_por_categoria.php',
+				data: {
+					select_categoria: texto,
+				},
+				success: function (data) {
+					$("#output_cardapio").html(data);
+				}
+			});
+		}
 	</script>
 
 	<script>

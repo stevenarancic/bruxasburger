@@ -69,7 +69,16 @@
 
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$('.owl-carousel').owlCarousel({
+			$('.owl-filial').owlCarousel({
+				loop: true,
+				margin: 10,
+				nav: false,
+				dots: false,
+				items: 1,
+			})
+		});
+		$(document).ready(function () {
+			$('.owl-item-cardapio').owlCarousel({
 				loop: true,
 				margin: 10,
 				nav: false,

@@ -30,5 +30,5 @@ if ($stmt->rowCount() > 0) {
         </div>";
     }
 } else {
-    echo "Nada encontrado :(";
+    echo "{$_POST['select_categoria']}";
 }

@@ -19,8 +19,7 @@ Cardápio
     <h2 class="mt-4">Cardápio</h2>
 
     <div class="w-100 d-flex align-items-center mb-3">
-        <select class="form-select" aria-label="Default select example" id="search_cardapio_categoria"
-            onchange="jsfunction(this)" name="search_cardapio_categoria">
+        <select class="form-select" id="search_cardapio_categoria" onchange="jsfunction(this)" name="select_categoria">
             {% for categoria in categoriaDAO.readCategoria %}
             <option value="{{ categoria.nome }}">{{ categoria.nome }}</option>
             {% endfor %}
@@ -28,11 +27,21 @@ Cardápio
     </div>
 
     <div id="output_cardapio_categoria"></div>
+
     <!-- Pesquisa cardápio por categoria -->
     <script type="text/javascript">
-        var texto = $("#search_cardapio_categoria option:selected").text();
         function jsfunction(sel) {
-            alert(sel.options[sel.selectedIndex].text);
+            texto = sel.options[sel.selectedIndex].text;
+            $.ajax({
+                type: 'POST',
+                url: '/bruxasburger/app/controller/itens_cardapio/pesquisa_por_categoria.php',
+                data: {
+                    select_categoria: texto,
+                },
+                success: function (data) {
+                    $("#output_cardapio").html(data);
+                }
+            });
         }
     </script>
 </section>

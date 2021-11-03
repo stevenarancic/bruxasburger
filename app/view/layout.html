@@ -89,6 +89,7 @@
 		});
 	</script>
 
+	<!-- Filiais -->
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$("#search").keypress(function () {
@@ -104,9 +105,6 @@
 				});
 			});
 		});
-	</script>
-
-	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			$.ajax({
 				type: 'POST',
@@ -116,6 +114,36 @@
 				},
 				success: function (data) {
 					$("#output").html(data);
+				}
+			});
+		});
+	</script>
+
+	<!-- Pesquisa cardápio -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#search_cardapio").keypress(function () {
+				$.ajax({
+					type: 'POST',
+					url: '/bruxasburger/app/controller/itens_cardapio/pesquisa.php',
+					data: {
+						item_cardapio: $("#search_cardapio").val(),
+					},
+					success: function (data) {
+						$("#output_cardapio").html(data);
+					}
+				});
+			});
+		});
+		document.addEventListener("DOMContentLoaded", function () {
+			$.ajax({
+				type: 'POST',
+				url: '/bruxasburger/app/controller/itens_cardapio/pesquisa.php',
+				data: {
+					item_cardapio: $("#search_cardapio").val(),
+				},
+				success: function (data) {
+					$("#output_cardapio").html(data);
 				}
 			});
 		});

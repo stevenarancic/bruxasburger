@@ -6,11 +6,11 @@
         </div>
         <div class="col-md-8">
             <div class="card-header">
-                {$item['nome']}&#{$item['icone']};
+                <?=$item['nome']?>&#<?=$item['icone']?>;
             </div>
             <div class="card-body">
-                <h5 class="card-title">{$item['item_nome']}</h5>
-                <p class="card-text">{$item['descricao']}.</p>
+                <h5 class="card-title"><?=$item['item_nome']?></h5>
+                <p class="card-text"><?=$item['descricao']?></p>
             </div>
         </div>
     </div>

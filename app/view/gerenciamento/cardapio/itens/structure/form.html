@@ -15,7 +15,9 @@
         <label for="floatingInput">Id</label>
     </div>
     <select class="form-select mb-3" name="select_categoria">
-        <option value="" selected>Escolha uma categoria</option>
+        <option value="1" selected>
+            Teste
+        </option>
         {% for categoria in categoriaDAO.readCategoria %}
         <option value="{{ categoria.id }}">
             {{ categoria.nome }}&#{{ categoria.icone }};

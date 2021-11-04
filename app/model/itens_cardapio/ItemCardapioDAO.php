@@ -54,7 +54,7 @@ class ItemCardapioDAO
 
     public function updateItemCardapio(ItemCardapio $itemCardapio)
     {
-        $sql = "UPDATE cardapio_item SET imagem = :imagem nome = :nome, descricao = :descricao, categoria_id = :categoria_id WHERE id = :id";
+        $sql = "UPDATE cardapio_item SET imagem = :imagem, nome = :nome, descricao = :descricao, categoria_id = :categoria_id WHERE id = :id";
 
         $stmt = Conexao::getInstance()->prepare($sql);
 
@@ -76,5 +76,43 @@ class ItemCardapioDAO
         $stmt->bindValue(':id', $id);
 
         $stmt->execute();
+    }
+
+    public function createImagemItemCardapio($nomeDaImagem, $caminhoAtualImagem)
+    {
+        $caminhoSalvamentoImagem = "../../../assets/img/cardapio_itens/{$nomeDaImagem}";
+
+        move_uploaded_file($caminhoAtualImagem, $caminhoSalvamentoImagem);
+    }
+
+    public function updateImagemItemCardapio($nomeImagem)
+    {
+        $caminhoAtualImagem = $_FILES['imagem_item_cardapio']['tmp_name'];
+        $caminhoNovaImagem = "../../../assets/img/cardapio_itens/{$nomeImagem}";
+
+        if (file_exists($caminhoNovaImagem)) {
+            if ($nomeImagem != "") {
+                if (unlink($caminhoNovaImagem)) {
+                    move_uploaded_file($caminhoAtualImagem, $caminhoNovaImagem);
+                } else {
+                    echo "A imagem {$nomeImagem} não pode ser apagada!";
+                }
+            }
+        } else {
+            if ($nomeImagem != "") {
+                move_uploaded_file($caminhoAtualImagem, $caminhoNovaImagem);
+            }
+        }
+    }
+
+    public function deleteImagemItemCardapio($nomeDaImagem)
+    {
+        $caminhoImagem = "../../../assets/img/cardapio_itens/{$nomeDaImagem}";
+
+        if (unlink($caminhoImagem)) {
+            echo "O arquivo {$nomeDaImagem} foi deletado !";
+        } else {
+            echo "A imagem {$nomeDaImagem} não pode ser apagada!";
+        }
     }
 }

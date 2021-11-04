@@ -9,10 +9,11 @@ class ItemCardapioDAO
 {
     public function createItemCardapio(ItemCardapio $itemCardapio)
     {
-        $sql = "INSERT INTO cardapio_item(nome, descricao, categoria_id) VALUES(:nome, :descricao, :categoria_id)";
+        $sql = "INSERT INTO cardapio_item(imagem, nome, descricao, categoria_id) VALUES(:imagem, :nome, :descricao, :categoria_id)";
 
         $stmt = Conexao::getInstance()->prepare($sql);
 
+        $stmt->bindValue(':imagem', $itemCardapio->getImagem());
         $stmt->bindValue(':nome', $itemCardapio->getNome());
         $stmt->bindValue(':descricao', $itemCardapio->getDescricao());
         $stmt->bindValue(':categoria_id', $itemCardapio->getCategoriaId());
@@ -53,12 +54,14 @@ class ItemCardapioDAO
 
     public function updateItemCardapio(ItemCardapio $itemCardapio)
     {
-        $sql = "UPDATE cardapio_item SET nome = :nome, descricao = :descricao WHERE id = :id";
+        $sql = "UPDATE cardapio_item SET imagem = :imagem nome = :nome, descricao = :descricao, categoria_id = :categoria_id WHERE id = :id";
 
         $stmt = Conexao::getInstance()->prepare($sql);
 
+        $stmt->bindValue(':imagem', $itemCardapio->getImagem());
         $stmt->bindValue(':nome', $itemCardapio->getNome());
         $stmt->bindValue(':descricao', $itemCardapio->getDescricao());
+        $stmt->bindValue(':categoria_id', $itemCardapio->getCategoriaId());
         $stmt->bindValue(':id', $itemCardapio->getId());
 
         $stmt->execute();

@@ -3,19 +3,19 @@ require_once __DIR__ . "../../../../vendor/autoload.php";
 
 $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 
-if ($_POST['imagem'] == "" and $_FILES['imagem_item_cardapio']['name'] != "") {
-    $itemCardapio = new \app\model\itens_cardapio\ItemCardapio($_POST['nome'], $_POST['descricao'], $_POST['select_categoria'], $_FILES['imagem_item_cardapio']['name']);
-    $itemCardapio->setId($_POST['id']);
-    $itemCardapioDAO->updateImagemItemCardapio($_FILES['imagem_item_cardapio']['name']);
-    $itemCardapioDAO->updateItemCardapio($itemCardapio);
-} else if ($_POST['imagem'] != "" and $_FILES['imagem_item_cardapio']['name'] == "") {
-    $itemCardapio = new \app\model\itens_cardapio\ItemCardapio($_POST['nome'], $_POST['descricao'], $_POST['select_categoria'], $_POST['imagem']);
+$imagemBanco = $_POST['imagem'];
+$imagemUpload = $_FILES['imagem_item_cardapio']['name'];
+
+if ($imagemUpload == "") {
+    $itemCardapio = new \app\model\itens_cardapio\ItemCardapio($_POST['nome'], $_POST['descricao'], $_POST['select_categoria'], $imagemBanco);
     $itemCardapio->setId($_POST['id']);
     $itemCardapioDAO->updateItemCardapio($itemCardapio);
-} else if ($_POST['imagem'] != "" and $_FILES['imagem_item_cardapio']['name'] != "") {
-    $itemCardapio = new \app\model\itens_cardapio\ItemCardapio($_POST['nome'], $_POST['descricao'], $_POST['select_categoria'], $_FILES['imagem_item_cardapio']['name']);
+}
+
+if ($imagemUpload != "") {
+    $itemCardapio = new \app\model\itens_cardapio\ItemCardapio($_POST['nome'], $_POST['descricao'], $_POST['select_categoria'], $imagemUpload);
     $itemCardapio->setId($_POST['id']);
-    $itemCardapioDAO->updateImagemItemCardapio($_FILES['imagem_item_cardapio']['name']);
+    $itemCardapioDAO->updateImagemItemCardapio($imagemUpload);
     $itemCardapioDAO->updateItemCardapio($itemCardapio);
 }
 

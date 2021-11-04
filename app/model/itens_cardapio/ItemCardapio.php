@@ -5,13 +5,15 @@ namespace app\model\itens_cardapio;
 class ItemCardapio
 {
     private $id;
+    private $categoria_id;
     private $nome;
     private $descricao;
 
-    public function __construct($nome, $descricao)
+    public function __construct($nome, $descricao, $categoria_id)
     {
         $this->setNome($nome);
         $this->setDescricao($descricao);
+        $this->setCategoriaId($categoria_id);
     }
 
     /**
@@ -70,6 +72,26 @@ class ItemCardapio
     public function setDescricao($descricao)
     {
         $this->descricao = $descricao;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of categoria_id
+     */
+    public function getCategoriaId()
+    {
+        return $this->categoria_id;
+    }
+
+    /**
+     * Set the value of categoria_id
+     *
+     * @return  self
+     */
+    public function setCategoriaId($categoria_id)
+    {
+        $this->categoria_id = $categoria_id;
 
         return $this;
     }

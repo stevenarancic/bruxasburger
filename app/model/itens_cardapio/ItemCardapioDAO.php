@@ -9,12 +9,13 @@ class ItemCardapioDAO
 {
     public function createItemCardapio(ItemCardapio $itemCardapio)
     {
-        $sql = "INSERT INTO cardapio_item(nome, descricao) VALUES(:nome, :descricao)";
+        $sql = "INSERT INTO cardapio_item(nome, descricao, categoria_id) VALUES(:nome, :descricao, :categoria_id)";
 
         $stmt = Conexao::getInstance()->prepare($sql);
 
         $stmt->bindValue(':nome', $itemCardapio->getNome());
         $stmt->bindValue(':descricao', $itemCardapio->getDescricao());
+        $stmt->bindValue(':categoria_id', $itemCardapio->getCategoriaId());
 
         $stmt->execute();
     }

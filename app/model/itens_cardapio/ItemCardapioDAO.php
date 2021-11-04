@@ -23,7 +23,7 @@ class ItemCardapioDAO
 
     public function readItemCardapio()
     {
-        $sql = "SELECT *, item.nome as item_nome FROM cardapio_item as item INNER JOIN cardapio_categoria as categoria ON item.categoria_id = categoria.id";
+        $sql = "SELECT *, item.nome as item_nome, item.id as item_id FROM cardapio_item as item INNER JOIN cardapio_categoria as categoria ON item.categoria_id = categoria.id";
 
         $stmt = Conexao::getInstance()->prepare($sql);
         $stmt->execute();

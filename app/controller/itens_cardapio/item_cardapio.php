@@ -9,7 +9,7 @@
                 <?=$item['nome']?>&#<?=$item['icone']?>;
             </div>
             <div class="card-body">
-                <h5 class="card-title"><?=$item['item_nome']?></h5>
+                <h4 class="card-title"><?=$item['item_nome']?></h4>
                 <p class="card-text"><?=$item['descricao']?></p>
             </div>
         </div>

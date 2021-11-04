@@ -5,7 +5,7 @@
                 class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
-            <div class="card-header">
+            <div class="card-header bg-danger text-white" style="font-weight: bold;">
                 <?=$item['nome']?>&#<?=$item['icone']?>;
             </div>
             <div class="card-body">

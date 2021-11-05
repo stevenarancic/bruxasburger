@@ -104,4 +104,20 @@ class ItemCardapioDAO
             }
         }
     }
+
+    public function deleteImagemItemCardapio($id)
+    {
+        $sql = "SELECT imagem FROM cardapio_item WHERE id = {$id}";
+
+        $stmt = Conexao::getInstance()->prepare($sql);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            foreach ($stmt->fetchAll(\PDO::FETCH_ASSOC) as $key => $item) {
+                unlink("../../../assets/img/cardapio_itens/{$item['imagem']}");
+            }
+        } else {
+            return "Item não encontrado :(";
+        }
+    }
 }

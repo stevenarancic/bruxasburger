@@ -18,10 +18,8 @@
         <input type="text" class="form-control" placeholder=" " name="imagem" value="{{ itemCardapio.imagem }}">
         <label for="floatingInput">Imagem</label>
     </div>
-    <select class="form-select mb-3" name="select_categoria">
-        <option value="1" selected>
-            Teste
-        </option>
+    <select class="form-select" name="select_categoria">
+        <option value="{{ itemCardapio.categoria_id }}" selected>Escolha uma categoria</option>
         {% for categoria in categoriaDAO.readCategoria %}
         <option value="{{ categoria.id }}">
             {{ categoria.nome }}&#{{ categoria.icone }};

@@ -104,15 +104,4 @@ class ItemCardapioDAO
             }
         }
     }
-
-    public function deleteImagemItemCardapio($nomeDaImagem)
-    {
-        $caminhoImagem = "../../../assets/img/cardapio_itens/{$nomeDaImagem}";
-
-        if (unlink($caminhoImagem)) {
-            echo "O arquivo {$nomeDaImagem} foi deletado !";
-        } else {
-            echo "A imagem {$nomeDaImagem} não pode ser apagada!";
-        }
-    }
 }

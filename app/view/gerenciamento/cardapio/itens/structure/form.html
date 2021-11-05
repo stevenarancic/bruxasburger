@@ -1,5 +1,6 @@
 <!-- Depois deixar o create "mudavel" para também poder ser um update.php -->
-<form action="../../../../bruxasburger/app/controller/itens_cardapio/{{ condicional }}.php" method="post">
+<form action="../../../../bruxasburger/app/controller/itens_cardapio/{{ condicional }}.php" method="post"
+    enctype="multipart/form-data">
     <div class="form-floating mb-3">
         <input type="text" class="form-control" placeholder=" " name="nome" value="{{ itemCardapio.nome }}">
         <label for="floatingInput">Nome</label>
@@ -12,6 +13,24 @@
     <div class="form-floating mb-3 d-none">
         <input type="text" class="form-control" placeholder=" " name="id" value="{{ itemCardapio.id }}">
         <label for="floatingInput">Id</label>
+    </div>
+    <div class="form-floating mb-3 d-none">
+        <input type="text" class="form-control" placeholder=" " name="imagem" value="{{ itemCardapio.imagem }}">
+        <label for="floatingInput">Imagem</label>
+    </div>
+    <select class="form-select mb-3" name="select_categoria">
+        <option value="1" selected>
+            Teste
+        </option>
+        {% for categoria in categoriaDAO.readCategoria %}
+        <option value="{{ categoria.id }}">
+            {{ categoria.nome }}&#{{ categoria.icone }};
+        </option>
+        {% endfor %}
+    </select>
+    <div class="mb-3">
+        <label for="" class="form-label">Foto do item</label>
+        <input class="form-control" type="file" name="imagem_item_cardapio">
     </div>
     <button type="submit" class="btn btn-primary">Confirmar</button>
 </form>

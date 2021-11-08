@@ -1,5 +1,6 @@
 <!-- Depois deixar o create "mudavel" para também poder ser um update.php -->
-<form action="../../../../bruxasburger/app/controller/filiais/{{ condicional }}.php" method="post">
+<form action="../../../../bruxasburger/app/controller/filiais/{{ condicional }}.php" method="post"
+    enctype="multipart/form-data">
     <div class="form-floating mb-3">
         <input type="tel" class="form-control" placeholder=" " name="telefone" value="{{ filial.telefone }}">
         <label for="floatingInput">Telefone</label>
@@ -26,7 +27,11 @@
     </div>
     <div class="form-floating mb-3 d-none">
         <input type="number" class="form-control" placeholder=" " name="id" value="{{ filial.id }}">
-        <label for="">Número</label>
+        <label for=""></label>
+    </div>
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Imagens</label>
+        <input class="form-control" type="file" name="upload[]" multiple="multiple" />
     </div>
     <button type="submit" class="btn btn-primary">Confirmar</button>
 </form>

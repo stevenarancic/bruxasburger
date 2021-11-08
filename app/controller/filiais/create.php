@@ -35,6 +35,9 @@ for ($i = 0; $i < $total; $i++) {
 }
 
 // Cadastrar cada imagem do loop na tabela imagem_filial e colocar o id da filial na FK
+// if ($_POST['id'] != "") {
+//   faz o create vazio pra pegar o último id e salvar em uma variavel, para colocar o id na FK
+// }
 
 $filialDAO->createFilial($filial);
 

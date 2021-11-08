@@ -33,6 +33,7 @@ for ($i = 0; $i < $total; $i++) {
         }
     }
 }
+
 // Cadastrar cada imagem do loop na tabela imagem_filial e colocar o id da filial na FK
 
 $filialDAO->createFilial($filial);

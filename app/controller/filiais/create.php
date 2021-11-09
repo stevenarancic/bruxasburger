@@ -25,11 +25,7 @@ for ($i = 0; $i < $total; $i++) {
         move_uploaded_file($tmpFilePath, $newFilePath);
     }
 
-    if ($_POST['id'] == "") {
-        $imagemFilial = new \app\model\filiais\ImagemFilial($_COOKIE['ultimoIdFilial'], $_FILES['upload']['name'][$i]);
-    } else {
-        $imagemFilial = new \app\model\filiais\ImagemFilial($_POST['id'], $_FILES['upload']['name']);
-    }
+    $imagemFilial = new \app\model\filiais\ImagemFilial(Conexao::getInstance()->lastInsertId(), $_FILES['upload']['name'][$i]);
 
     $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
     $imagemFilialDAO->createImagemFilial($imagemFilial);

@@ -35,11 +35,4 @@ for ($i = 0; $i < $total; $i++) {
     $imagemFilialDAO->createImagemFilial($imagemFilial);
 }
 
-// Cadastrar cada imagem do loop na tabela imagem_filial e colocar o id da filial na FK
-// if ($_POST['id'] != "") {
-//   faz o create vazio pra pegar o último id e salvar em uma variavel, para colocar o id na FK
-//   setcookie('ultimoIdFilial', Conexao::getInstance()->lastInsertId(), time() + (86400 * 30), "/"); // 86400 = 1 dia. Cookie que dura 1 mês.
-//   deletar o registro vazio criado na tabela.
-// }
-
 header("location: ../../../gerenciamento/filiais/home");

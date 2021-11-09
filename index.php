@@ -20,7 +20,7 @@ if (isset($_GET['id']) and $_GET['id'] != "") {
     }
 }
 if (isset($_GET['id_delete']) and $_GET['id_delete'] != "") {
-    header("location: app/controller/filiais/delete.php?id_delete={$_GET['id_delete']}");
+    header("location: app/controller/filiais/delete.php?id_delete={$_GET['id_delete']}&nomeFilial={$_GET['nomeFilial']}");
 }
 
 // Categoria

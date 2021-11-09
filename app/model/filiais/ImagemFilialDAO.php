@@ -18,9 +18,18 @@ class ImagemFilialDAO
         $stmt->execute();
     }
 
+    // Serve para deletar apenas uma única imagem, usa o ID dessa mesma imagem
     public function deleteImagemFilial($id)
     {
         $sql = "DELETE FROM imagem_filial WHERE id = {$id}";
+        $stmt = Conexao::getInstance()->prepare($sql);
+        $stmt->execute();
+    }
+
+    // Serve para deletar todas as imagens da filial, usando o ID da filial
+    public function deleteImagensFilial($filial_id)
+    {
+        $sql = "DELETE FROM imagem_filial WHERE filial_id = {$filial_id}";
         $stmt = Conexao::getInstance()->prepare($sql);
         $stmt->execute();
     }

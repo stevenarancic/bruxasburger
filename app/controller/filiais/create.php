@@ -9,6 +9,7 @@ $filialDAO = new \app\model\filiais\FilialDAO();
 
 $filialDAO->createFilial($filial);
 setcookie('ultimoIdFilial', Conexao::getInstance()->lastInsertId(), time() + (86400 * 30), "/"); // 86400 = 1 dia. Cookie que dura 1 mês.
+$ultimoID = Conexao::getInstance()->lastInsertId();
 
 $total = count($_FILES['upload']['name']);
 
@@ -25,7 +26,7 @@ for ($i = 0; $i < $total; $i++) {
         move_uploaded_file($tmpFilePath, $newFilePath);
     }
 
-    $imagemFilial = new \app\model\filiais\ImagemFilial(Conexao::getInstance()->lastInsertId(), $_FILES['upload']['name'][$i]);
+    $imagemFilial = new \app\model\filiais\ImagemFilial($ultimoID, $_FILES['upload']['name'][$i]);
 
     $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
     $imagemFilialDAO->createImagemFilial($imagemFilial);

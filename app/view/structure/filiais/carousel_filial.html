@@ -1,22 +1,24 @@
 <div class="col" style="position: inherit;">
     <div class="card shadow ms-3 me-3 mb-4 mt-4" style="position: inherit;">
-        <img id="myBtn" src="https://www.setelajeado.com.br/img/infra/bar-lancheria-1.jpg" class="card-img-top"
-            alt="..." style="height: 25em; object-fit: cover">
-        <div class="card-body text-center">
-            <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">
-                {{ filial.rua }} - {{ filial.numero }}, {{ filial.bairro }}
-            </h6>
-            <a href="https://api.whatsapp.com/send?phone={{ filial.telefone }}" class="btn btn-success w-100"
-                style="position: inherit;">
-                <i class="bi bi-whatsapp"></i> Chamar no Whatsapp
-            </a>
-        </div>
+        {% for item in imagemFilialDAO.filtrarPorFilial(filial.id) %}
+        {% if loop.first %}
+        <img id="myBtn" src="assets/img/filiais/{{ filial.cidade }}/{{ item.nome }}" class="card-img-top" alt="..."
+            style="height: 25em; object-fit: cover">
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="card-body text-center">
+        <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{ filial.rua }} - {{ filial.numero }}, {{ filial.bairro }}
+        </h6>
+        <a href="https://api.whatsapp.com/send?phone={{ filial.telefone }}" class="btn btn-success w-100"
+            style="position: inherit;">
+            <i class="bi bi-whatsapp"></i> Chamar no Whatsapp
+        </a>
     </div>
 </div>
-<!-- The Modal -->
 <div id="myModal" class="modal">
-    <!-- Modal content -->
     <div class="modal-content" style="display: grid; place-content: center; width: 55rem;">
         <span class="close">&times;</span>
         <div class="slider">

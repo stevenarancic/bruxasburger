@@ -18,6 +18,20 @@ class ImagemFilialDAO
         $stmt->execute();
     }
 
+    public function filtrarPorFilial($id)
+    {
+        $sql = "SELECT * FROM `imagem_filial` WHERE filial_id = {$id}";
+
+        $stmt = Conexao::getInstance()->prepare($sql);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } else {
+            return "Nenhuma imagem cadastrada :(";
+        }
+    }
+
     // Serve para deletar apenas uma única imagem, usa o ID dessa mesma imagem
     public function deleteImagemFilial($id)
     {

@@ -24,27 +24,11 @@
         <span class="close">&times;</span>
 
         <div class="slider">
-            <div class="slide active">
-                <img src="https://www.setelajeado.com.br/img/infra/bar-lancheria-1.jpg" alt="">
-                <!-- <div class="info">
-                        <h2>Egypt Pyramids</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et
-                            dolore magna aliqua.</p>
-                    </div> -->
-            </div>
+            {% for item in imagemFilialDAO.filtrarPorFilial(00000000039) %}
             <div class="slide">
-                <img src="https://www.setelajeado.com.br/img/infra/bar-lancheria-1.jpg" alt="">
+                <img src="assets/img/filiais/{{ filial.cidade }}/{{ item.nome }}" alt="">
             </div>
-            <div class="slide">
-                <img src="https://www.setelajeado.com.br/img/infra/bar-lancheria-1.jpg" alt="">
-            </div>
-            <div class="slide">
-                <img src="https://www.setelajeado.com.br/img/infra/bar-lancheria-1.jpg" alt="">
-            </div>
-            <div class="slide">
-                <img src="assets/img/filiais/Canoas/daniel-leone-v7daTKlZzaw-unsplash.jpg" alt="">
-            </div>
+            {% endfor %}
             <div class="navigation">
                 <i class="fas fa-chevron-left prev-btn"></i>
                 <i class="fas fa-chevron-right next-btn"></i>

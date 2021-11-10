@@ -22,9 +22,8 @@
     <!-- Modal content -->
     <div class="modal-content" style="display: grid; place-content: center; width: 55rem;">
         <span class="close">&times;</span>
-
         <div class="slider">
-            {% for item in imagemFilialDAO.filtrarPorFilial(00000000039) %}
+            {% for item in imagemFilialDAO.filtrarPorFilial(filial.id) %}
             <div class="slide">
                 <img src="assets/img/filiais/{{ filial.cidade }}/{{ item.nome }}" alt="">
             </div>

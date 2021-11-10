@@ -64,5 +64,5 @@ if ($_GET) {
         echo $twig->render('404.html');
     }
 } else {
-    echo $twig->render('home.html');
+    echo $twig->render('home.html', ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO, 'itemCardapioDAO' => $itemCardapioDAO, 'imagemFilialDAO' => $imagemFilialDAO]);
 }

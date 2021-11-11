@@ -33,7 +33,7 @@ if ($stmt->rowCount() > 0) {
                     <div class=\"modal-body\">";
         foreach ($imagemFilialDAO->filtrarPorFilial($item['id']) as $key => $itemImagem) {
             echo "<img src=\"assets/img/filiais/{$item['cidade']}/{$itemImagem['nome']}\"
-                        class=\"img-fluid rounded\" alt=\"Imagem indisponível :(\" style=\"height: 10rem; width: 100%; object-fit: cover\">";
+                        class=\"img-fluid rounded\" alt=\"Imagem indisponível :(\" style=\"height: 100%; width: 100%; object-fit: cover\">";
         }
         echo "</div>
                     <div class=\"modal-footer\">

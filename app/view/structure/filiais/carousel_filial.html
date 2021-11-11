@@ -2,10 +2,21 @@
     <div class="card shadow ms-3 me-3 mb-4 mt-4" style="position: inherit;">
         {% for item in imagemFilialDAO.filtrarPorFilial(filial.id) %}
         {% if loop.first %}
-        <img id="myBtn" src="assets/img/filiais/{{ filial.cidade }}/{{ item.nome }}" class="card-img-top" alt="..."
+        <img src="assets/img/filiais/{{ filial.cidade }}/{{ item.nome }}" class="card-img-top" alt="..."
             style="height: 25em; object-fit: cover">
         {% endif %}
         {% endfor %}
+        <div class="d-flex flex-row">
+            {% for item in imagemFilialDAO.filtrarPorFilial(filial.id) %}
+            {% if loop.first %}
+            {% else %}
+            <div class="col ">
+                <img src="assets/img/filiais/{{ filial.cidade }}/{{ item.nome }}" alt=""
+                    style="height: 15rem; object-fit: cover;">
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
     <div class="card-body text-center">
         <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
@@ -18,131 +29,3 @@
         </a>
     </div>
 </div>
-<div id="myModal" class="modal">
-    <div class="modal-content" style="display: grid; place-content: center; width: 55rem;">
-        <span class="close">&times;</span>
-        <div class="slider">
-            {% for item in imagemFilialDAO.filtrarPorFilial(filial.id) %}
-            <div class="slide">
-                <img src="assets/img/filiais/{{ filial.cidade }}/{{ item.nome }}" alt="">
-            </div>
-            {% endfor %}
-            <div class="navigation">
-                <i class="fas fa-chevron-left prev-btn"></i>
-                <i class="fas fa-chevron-right next-btn"></i>
-            </div>
-            <div class="navigation-visibility">
-                {% for item in imagemFilialDAO.filtrarPorFilial(filial.id) %}
-                <div class="slide-icon"></div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-    const slider = document.querySelector(".slider");
-    const nextBtn = document.querySelector(".next-btn");
-    const prevBtn = document.querySelector(".prev-btn");
-    const slides = document.querySelectorAll(".slide");
-    const slideIcons = document.querySelectorAll(".slide-icon");
-    const numberOfSlides = slides.length;
-    var slideNumber = 0;
-
-    //image slider next button
-    nextBtn.addEventListener("click", () => {
-        slides.forEach((slide) => {
-            slide.classList.remove("active");
-        });
-        slideIcons.forEach((slideIcon) => {
-            slideIcon.classList.remove("active");
-        });
-
-        slideNumber++;
-
-        if (slideNumber > (numberOfSlides - 1)) {
-            slideNumber = 0;
-        }
-
-        slides[slideNumber].classList.add("active");
-        slideIcons[slideNumber].classList.add("active");
-    });
-
-    //image slider previous button
-    prevBtn.addEventListener("click", () => {
-        slides.forEach((slide) => {
-            slide.classList.remove("active");
-        });
-        slideIcons.forEach((slideIcon) => {
-            slideIcon.classList.remove("active");
-        });
-
-        slideNumber--;
-
-        if (slideNumber < 0) {
-            slideNumber = numberOfSlides - 1;
-        }
-
-        slides[slideNumber].classList.add("active");
-        slideIcons[slideNumber].classList.add("active");
-    });
-
-    //image slider autoplay
-    var playSlider;
-
-    var repeater = () => {
-        playSlider = setInterval(function () {
-            slides.forEach((slide) => {
-                slide.classList.remove("active");
-            });
-            slideIcons.forEach((slideIcon) => {
-                slideIcon.classList.remove("active");
-            });
-
-            slideNumber++;
-
-            if (slideNumber > (numberOfSlides - 1)) {
-                slideNumber = 0;
-            }
-
-            slides[slideNumber].classList.add("active");
-            slideIcons[slideNumber].classList.add("active");
-        }, 4000);
-    }
-    repeater();
-
-    //stop the image slider autoplay on mouseover
-    slider.addEventListener("mouseover", () => {
-        clearInterval(playSlider);
-    });
-
-    //start the image slider autoplay again on mouseout
-    slider.addEventListener("mouseout", () => {
-        repeater();
-    });
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal 
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>

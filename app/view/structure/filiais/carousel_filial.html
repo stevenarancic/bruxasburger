@@ -1,31 +1,37 @@
 <div class="col" style="position: inherit;">
     <div class="card shadow ms-3 me-3 mb-4 mt-4" style="position: inherit;">
-        {% for item in imagemFilialDAO.filtrarPorFilial(filial.id) %}
+        {% for itemImagem in imagemFilialDAO.filtrarPorFilial(filial.id) %}
         {% if loop.first %}
-        <img src="assets/img/filiais/{{ filial.cidade }}/{{ item.nome }}" class="card-img-top" alt="..."
-            style="height: 25em; object-fit: cover">
+        <img src="assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}" class="img-fluid rounded card-img-top"
+            alt="..." data-bs-toggle="modal" data-bs-target="#modalImagem{{ filial.id }}"
+            style="height: 25rem; width: 100%; object-fit: cover">
         {% endif %}
         {% endfor %}
-        <div class="d-flex flex-row">
-            {% for item in imagemFilialDAO.filtrarPorFilial(filial.id) %}
-            {% if loop.first %}
-            {% else %}
-            <div class="col ">
-                <img src="assets/img/filiais/{{ filial.cidade }}/{{ item.nome }}" alt=""
-                    style="height: 15rem; object-fit: cover;">
+        <div class="modal fade" id="modalImagem{{ filial.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">";
+                        {% for imagemFilialDAO in imagemFilialDAO.filtrarPorImagem(item.id) %}
+                        <img src="assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}"
+                            class="img-fluid rounded" alt="...">
+                        {% endfor %}
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            {% endif %}
-            {% endfor %}
         </div>
-    </div>
-    <div class="card-body text-center">
-        <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">
-            {{ filial.rua }} - {{ filial.numero }}, {{ filial.bairro }}
-        </h6>
-        <a href="https://api.whatsapp.com/send?phone={{ filial.telefone }}" class="btn btn-success w-100"
-            style="position: inherit;">
-            <i class="bi bi-whatsapp"></i> Chamar no Whatsapp
-        </a>
+        <div class="card-body">
+            <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                {{ filial.rua }} - {{ filial.numero }}, {{ filial.bairro }}
+            </h6>
+            <a href="https://api.whatsapp.com/send?phone={{ filial.telefone }}" class="btn btn-success w-100"
+                style="position: inherit;">
+                <i class="bi bi-whatsapp"></i> Chamar no Whatsapp
+            </a>
+        </div>
     </div>
 </div>

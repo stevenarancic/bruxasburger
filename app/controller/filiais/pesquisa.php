@@ -20,18 +20,15 @@ if ($stmt->rowCount() > 0) {
 
         foreach ($imagemFilialDAO->filtrarPorFilial($item['id']) as $key => $itemImagem) {
             if ($key == 0) {
-                echo "<img src=\"assets/img/filiais/{$item['cidade']}/{$itemImagem['nome']}\" class=\"img-fluid rounded\" alt=\"Imagem indisponível :(\" style=\"height: 10rem; width: 100%; object-fit: cover\">";
+                echo "
+                <img src=\"assets/img/filiais/{$item['cidade']}/{$itemImagem['nome']}\" class=\"img-fluid rounded\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal{$item['id']}\"  style=\"height: 100%; width: 100%; object-fit: cover\">";
             }
         }
 
         echo "
-        <button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal{$item['id']}\">
-            Ver todas as fotos
-        </button>
-
         <!-- Modal -->
         <div class=\"modal fade\" id=\"exampleModal{$item['id']}\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
-            <div class=\"modal-dialog\">
+            <div class=\"modal-dialog modal-dialog-scrollable modal-dialog-centered\">
                 <div class=\"modal-content\">
                     <div class=\"modal-body\">";
         foreach ($imagemFilialDAO->filtrarPorFilial($item['id']) as $key => $itemImagem) {
@@ -40,8 +37,7 @@ if ($stmt->rowCount() > 0) {
         }
         echo "</div>
                     <div class=\"modal-footer\">
-                        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
-                        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>
+                        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Fechar</button>
                     </div>
                 </div>
             </div>

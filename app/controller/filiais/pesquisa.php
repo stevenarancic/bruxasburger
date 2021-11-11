@@ -17,10 +17,36 @@ if ($stmt->rowCount() > 0) {
             <div class=\"row g-0\">
                 <div class=\"col-md-4\" style=\"display: grid; place-items:center;\">"
         ;
+
         foreach ($imagemFilialDAO->filtrarPorFilial($item['id']) as $key => $itemImagem) {
             echo "<img src=\"assets/img/filiais/{$item['cidade']}/{$itemImagem['nome']}\"
             class=\"img-fluid rounded\" alt=\"Imagem indisponível :(\" style=\"height: 10rem; width: 100%; object-fit: cover\">";
         }
+
+        echo "!-- Button trigger modal -->
+        <button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">
+            <div class=\"modal-dialog\">
+                <div class=\"modal-content\">
+                    <div class=\"modal-header\">
+                        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Modal title</h5>
+                        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                    </div>
+                    <div class=\"modal-body\">
+                        {$item['id']}
+                    </div>
+                    <div class=\"modal-footer\">
+                        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+                        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>";
+
         echo "</div>
                 <div class=\"col-md-8\">
                     <div class=\"card-body\">

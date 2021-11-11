@@ -7,22 +7,6 @@
             style="height: 25rem; width: 100%; object-fit: cover">
         {% endif %}
         {% endfor %}
-        <div class="modal fade" id="modalImagem{{ filial.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body">";
-                        {% for imagemFilialDAO in imagemFilialDAO.filtrarPorImagem(item.id) %}
-                        <img src="assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}"
-                            class="img-fluid rounded" alt="...">
-                        {% endfor %}
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="card-body">
             <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">

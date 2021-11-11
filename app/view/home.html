@@ -56,6 +56,25 @@ Home
 </p>
 <!-- Filiais -->
 <h2 class="text-center mt-4">Encontre um Bruxas perto de você</h2>
+{% for filial in filialDAO.readFilial %}
+<div class="modal fade" id="modalImagem{{ filial.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">";
+                {% for itemImagem in imagemFilialDAO.filtrarPorFilial(filial.id) %}
+                <img src="assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}"
+                    class="img-fluid rounded card-img-top" alt="..." data-bs-toggle="modal"
+                    data-bs-target="#modalImagem{{ filial.id }}" style="height: 25rem; width: 100%; object-fit: cover">
+                {% endfor %}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 <div class="owl-carousel owl-filial owl-theme">
     {% for filial in filialDAO.readFilial %}
     <div class="item">

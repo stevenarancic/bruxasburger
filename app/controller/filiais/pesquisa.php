@@ -21,7 +21,7 @@ if ($stmt->rowCount() > 0) {
         foreach ($imagemFilialDAO->filtrarPorFilial($item['id']) as $key => $itemImagem) {
             if ($key == 0) {
                 echo "
-                <img src=\"assets/img/filiais/{$item['cidade']}/{$itemImagem['nome']}\" class=\"img-fluid rounded\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal{$item['id']}\"  style=\"height: 100%; width: 100%; object-fit: cover\">";
+                <img src=\"assets/img/filiais/{$item['cidade']}/{$itemImagem['nome']}\" class=\"img-fluid rounded\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal{$item['id']}\"  style=\"height: 10.7rem; width: 100%; object-fit: cover\">";
             }
         }
 
@@ -33,7 +33,7 @@ if ($stmt->rowCount() > 0) {
                     <div class=\"modal-body\">";
         foreach ($imagemFilialDAO->filtrarPorFilial($item['id']) as $key => $itemImagem) {
             echo "<img src=\"assets/img/filiais/{$item['cidade']}/{$itemImagem['nome']}\"
-                        class=\"img-fluid rounded\" alt=\"Imagem indisponível :(\" style=\"height: 100%; width: 100%; object-fit: cover\">";
+                        class=\"img-fluid rounded mb-3\" alt=\"Imagem indisponível :(\" style=\"height: 100%; width: 100%; object-fit: cover\">";
         }
         echo "</div>
                     <div class=\"modal-footer\">

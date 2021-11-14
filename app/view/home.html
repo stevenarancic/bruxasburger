@@ -64,7 +64,7 @@ Home
             <div class="modal-body">";
                 {% for itemImagem in imagemFilialDAO.filtrarPorFilial(filial.id) %}
                 <img src="assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}"
-                    class="img-fluid rounded card-img-top" alt="..." data-bs-toggle="modal"
+                    class="img-fluid rounded card-img-top mb-3" alt="..." data-bs-toggle="modal"
                     data-bs-target="#modalImagem{{ filial.id }}" style="height: 25rem; width: 100%; object-fit: cover">
                 {% endfor %}
                 <div class="modal-footer">

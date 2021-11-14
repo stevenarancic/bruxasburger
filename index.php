@@ -6,6 +6,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $filialDAO = new \app\model\filiais\FilialDAO();
 $categoriaDAO = new \app\model\categorias\CategoriaDAO();
 $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
+$imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
 
 $loader = new Twig\Loader\FilesystemLoader(__DIR__ . '/app/view');
 $twig = new Twig\Environment($loader, [
@@ -54,14 +55,14 @@ if ($_GET) {
             if (!isset($_SESSION['logado'])) {
                 echo $twig->render("gerenciamento/login.html");
             } else {
-                echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO, 'itemCardapioDAO' => $itemCardapioDAO]);
+                echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO, 'itemCardapioDAO' => $itemCardapioDAO, 'imagemFilialDAO' => $imagemFilialDAO]);
             }
         } else {
-            echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO, 'itemCardapioDAO' => $itemCardapioDAO]);
+            echo $twig->render("{$urlDinamico}.html", ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO, 'itemCardapioDAO' => $itemCardapioDAO, 'imagemFilialDAO' => $imagemFilialDAO]);
         }
     } else {
         echo $twig->render('404.html');
     }
 } else {
-    echo $twig->render('home.html');
+    echo $twig->render('home.html', ['filialDAO' => $filialDAO, 'categoriaDAO' => $categoriaDAO, 'itemCardapioDAO' => $itemCardapioDAO, 'imagemFilialDAO' => $imagemFilialDAO]);
 }

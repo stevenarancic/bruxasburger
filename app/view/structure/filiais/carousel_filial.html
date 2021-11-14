@@ -1,8 +1,13 @@
 <div class="col" style="position: inherit;">
     <div class="card shadow ms-3 me-3 mb-4 mt-4" style="position: inherit;">
-        <img src="https://www.setelajeado.com.br/img/infra/bar-lancheria-1.jpg" class="card-img-top" alt="..."
-            style="height: 25em; object-fit: cover">
-        <div class="card-body text-center">
+        {% for itemImagem in imagemFilialDAO.filtrarPorFilial(filial.id) %}
+        {% if loop.first %}
+        <img src="assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}" class="img-fluid rounded card-img-top"
+            alt="..." data-bs-toggle="modal" data-bs-target="#modalImagem{{ filial.id }}"
+            style="height: 25rem; width: 100%; object-fit: cover">
+        {% endif %}
+        {% endfor %}
+        <div class="card-body">
             <h5 class="card-title">Bruxas Burger {{ filial.cidade }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">
                 {{ filial.rua }} - {{ filial.numero }}, {{ filial.bairro }}

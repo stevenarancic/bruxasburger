@@ -18,7 +18,8 @@
                             <img src="../../assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}"
                                 class="img-fluid rounded" alt="Imagem indisponível :("
                                 style="height: 100%; width: 100%; object-fit: cover">
-                            <a href="#" class="mt-2 btn btn-danger mb-3">Apagar</a>
+                            <a href="../../app/controller/filiais/deleteImagem.php?id_imagem={{ itemImagem.id }}&filial={{ filial.cidade }}"
+                                class="mt-2 btn btn-danger mb-3">Apagar {{ itemImagem.id }}</a>
                             {% endfor %}
                         </div>
                         <div class="modal-footer">

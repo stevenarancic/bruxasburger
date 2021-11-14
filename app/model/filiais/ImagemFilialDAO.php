@@ -47,4 +47,18 @@ class ImagemFilialDAO
         $stmt = Conexao::getInstance()->prepare($sql);
         $stmt->execute();
     }
+
+    public function filtrarImagemPorId($id)
+    {
+        $sql = "SELECT * FROM `imagem_filial` WHERE id = {$id}";
+
+        $stmt = Conexao::getInstance()->prepare($sql);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } else {
+            return "Nenhuma imagem cadastrada :(";
+        }
+    }
 }

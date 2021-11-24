@@ -5,7 +5,7 @@ Home
 {% endblock %}
 
 {% block content %}
-<div class="owl-carousel owl-item-filial-home owl-theme d-flex align-items-center" style="height: 87vh;">
+<div class="owl-carousel owl-item-filial-home owl-theme d-flex align-items-center">
     {% for itemCardapio in itemCardapioDAO.readitemCardapio %}
     <div class="item">
         {% include "structure/home/carousel_filial_home.html" %}
@@ -42,62 +42,68 @@ Home
 </style>
 <div class="d-flex justify-content-center">
     <button id="teste" onclick="scrollar()" class="btn btn-danger text-white bounce"
-        style="margin-bottom: 5rem; z-index: 998;"><i class="bi bi-caret-down"></i></button>
+        style="margin-bottom: 3rem; z-index: 998;"><i class="bi bi-caret-down"></i></button>
 </div>
-<!-- Cardapio -->
-<h2 class="text-center mt-4">Confira nosso cardápio</h2>
-<div class="owl-carousel owl-item-cardapio owl-theme">
-    {% for itemCardapio in itemCardapioDAO.readitemCardapio %}
-    <div class="item">
-        {% include "structure/itens_cardapio/carousel_item_cardapio.html" %}
+<section class="container">
+    <!-- Cardapio -->
+    <h2 class="text-center mt-4">Confira nosso cardápio</h2>
+    <div class="owl-carousel owl-item-cardapio owl-theme">
+        {% for itemCardapio in itemCardapioDAO.readitemCardapio %}
+        <div class="item">
+            {% include "structure/itens_cardapio/carousel_item_cardapio.html" %}
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
-<div class="d-flex justify-content-center">
-    <a href="cardapio" class="btn btn-warning fs-5">Ver todos</a>
-</div>
+    <div class="d-flex justify-content-center">
+        <a href="cardapio" class="btn btn-warning fs-5">Ver todos</a>
+    </div>
 
-<h2 class="text-center mt-5 mb-4">Quem somos</h2>
-<p class="myP">
-    O Bruxas Burger tem como missão trazer cada vez mais conforto e bem estar aos seus clientes, mantendo sempre um
-    ótimo atendimento e buscando sempre ter os melhores preços para a satisfação de todos. Temos como objetivo expandir
-    nosso empreendimento e abrir filiais em diversos lugares do RS, SC e PR, para divulgar o trabalho singular que só o
-    Bruxas tem.
-    <br>
-    Bruxas Burger foi fundado há mais de 25 anos no litoral norte de Imbé por duas irmãs que há oito anos venderam o
-    mesmo para o atual proprietário: Edson Jacinto Herzogues. Tendo como sócios Carlos Fernando Noronha e Yuri Lima de
-    Noronha, proprietários da franquia em Porto Alegre.
-</p>
-<!-- Filiais -->
-<h2 class="text-center mt-4">Encontre um Bruxas perto de você</h2>
-{% for filial in filialDAO.readFilial %}
-<div class="modal fade" id="modalImagem{{ filial.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">";
-                {% for itemImagem in imagemFilialDAO.filtrarPorFilial(filial.id) %}
-                <img src="assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}"
-                    class="img-fluid rounded card-img-top mb-3" alt="..." data-bs-toggle="modal"
-                    data-bs-target="#modalImagem{{ filial.id }}" style="height: 25rem; width: 100%; object-fit: cover">
-                {% endfor %}
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+    <h2 class="text-center mt-5 mb-4">Quem somos</h2>
+    <p class="myP">
+        O Bruxas Burger tem como missão trazer cada vez mais conforto e bem estar aos seus clientes, mantendo sempre um
+        ótimo atendimento e buscando sempre ter os melhores preços para a satisfação de todos. Temos como objetivo
+        expandir
+        nosso empreendimento e abrir filiais em diversos lugares do RS, SC e PR, para divulgar o trabalho singular que
+        só o
+        Bruxas tem.
+        <br>
+        Bruxas Burger foi fundado há mais de 25 anos no litoral norte de Imbé por duas irmãs que há oito anos venderam o
+        mesmo para o atual proprietário: Edson Jacinto Herzogues. Tendo como sócios Carlos Fernando Noronha e Yuri Lima
+        de
+        Noronha, proprietários da franquia em Porto Alegre.
+    </p>
+    <!-- Filiais -->
+    <h2 class="text-center mt-4">Encontre um Bruxas perto de você</h2>
+    {% for filial in filialDAO.readFilial %}
+    <div class="modal fade" id="modalImagem{{ filial.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">";
+                    {% for itemImagem in imagemFilialDAO.filtrarPorFilial(filial.id) %}
+                    <img src="assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}"
+                        class="img-fluid rounded card-img-top mb-3" alt="..." data-bs-toggle="modal"
+                        data-bs-target="#modalImagem{{ filial.id }}"
+                        style="height: 25rem; width: 100%; object-fit: cover">
+                    {% endfor %}
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-{% endfor %}
-<div class="owl-carousel owl-filial owl-theme">
-    {% for filial in filialDAO.readFilial %}
-    <div class="item">
-        {% include "structure/filiais/carousel_filial.html" %}
-    </div>
     {% endfor %}
-</div>
-<div class="d-flex justify-content-center">
-    <a href="filiais" class="btn btn-warning fs-5">Ver todos</a>
-</div>
+    <div class="owl-carousel owl-filial owl-theme">
+        {% for filial in filialDAO.readFilial %}
+        <div class="item">
+            {% include "structure/filiais/carousel_filial.html" %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="d-flex justify-content-center">
+        <a href="filiais" class="btn btn-warning fs-5">Ver todos</a>
+    </div>
+</section>
 
 {% endblock %}

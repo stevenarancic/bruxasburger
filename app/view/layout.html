@@ -32,7 +32,7 @@
 <body>
 	{% include "structure/header.html" %}
 
-	<section class="container" style="min-height: 100vh">
+	<section style="min-height: 100vh">
 		{% block content %}{% endblock %}
 	</section>
 
@@ -61,7 +61,7 @@
 			{
 				$("body,html").animate(
 					{
-						scrollTop: window.innerHeight * 0.88                     // Scroll 93% of the screen from top of body
+						scrollTop: window.innerHeight * 0.9                    // Scroll 93% of the screen from top of body
 					}, 400);  //how fast the scrolling animation will be in miliseconds
 			});
 		});

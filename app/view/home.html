@@ -5,6 +5,13 @@ Home
 {% endblock %}
 
 {% block content %}
+<div class="owl-carousel owl-item-filial-home owl-theme">
+    {% for itemCardapio in itemCardapioDAO.readitemCardapio %}
+    <div class="item">
+        {% include "structure/home/carousel_filial_home.html" %}
+    </div>
+    {% endfor %}
+</div>
 <!-- Cardapio -->
 <h2 class="text-center mt-4">Confira nosso cardápio</h2>
 <div class="owl-carousel owl-item-cardapio owl-theme">

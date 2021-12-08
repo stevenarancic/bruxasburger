@@ -6,11 +6,27 @@ Home
 
 {% block content %}
 <div class="owl-carousel owl-item-filial-home owl-theme d-flex align-items-center">
-    {% for itemCardapio in itemCardapioDAO.readitemCardapio %}
     <div class="item">
-        {% include "structure/home/carousel_filial_home.html" %}
+        <div class="col" style="position: inherit;">
+            <img src="app/view/img1.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
+        </div>
     </div>
-    {% endfor %}
+    <div class="item">
+        <div class="col" style="position: inherit;">
+            <img src="app/view/img2.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
+        </div>
+    </div>
+    <div class="item">
+        <div class="col" style="position: inherit;">
+            <img src="app/view/img3.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
+        </div>
+    </div>
+    <div class="item">
+        <div class="col" style="position: inherit;">
+            <img src="app/view/img4.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
+        </div>
+    </div>
+
 </div>
 <style>
     .bounce {

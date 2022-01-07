@@ -7,10 +7,10 @@
         </div>
         <ul class="list-inline fs-2">
             <li>
-                <a href="cardapio" style="text-decoration: none!important; color: white;">Cardápio</a>
+                <a href="cardapio.php" style="text-decoration: none!important; color: white;">Cardápio</a>
             </li>
             <li>
-                <a href="filiais" style="text-decoration: none!important; color: white;">Filiais</a>
+                <a href="filiais.php" style="text-decoration: none!important; color: white;">Filiais</a>
             </li>
         </ul>
     </div>

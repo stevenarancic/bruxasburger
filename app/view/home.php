@@ -93,7 +93,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
             <button id="teste" onclick="scrollar()" class="btn btn-danger text-white bounce"
                 style="margin-bottom: 3rem; z-index: 998;"><i class="bi bi-caret-down"></i></button>
         </div>
-        <section class="container">
+        <section class="container col-md-6">
             <!-- Cardapio -->
             <h2 class="text-center mt-4">Confira nosso cardápio</h2>
             <div class="owl-carousel owl-item-cardapio owl-theme">
@@ -118,7 +118,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                 <?php }?>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="cardapio" class="btn btn-warning fs-5">Ver todos</a>
+                <a href="cardapio.php" class="btn btn-warning fs-5">Ver todos</a>
             </div>
 
             <h2 class="text-center mt-5 mb-4">Quem somos</h2>
@@ -192,7 +192,7 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
                 <?php }?>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="filiais" class="btn btn-warning fs-5">Ver todos</a>
+                <a href="filiais.php" class="btn btn-warning fs-5">Ver todos</a>
             </div>
         </section>
     </section>
@@ -234,17 +234,7 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
             margin: 10,
             nav: false,
             dots: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 3
-                }
-            }
+            items: 1,
         })
     });
     $(document).ready(function() {

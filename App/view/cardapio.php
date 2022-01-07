@@ -26,7 +26,9 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
             <input type="text" class="form-control" id="search_cardapio" placeholder="Pesquise por algum item">
             <select class="form-select ms-3" id="search_cardapio_categoria" onchange="jsfunction(this)"
                 name="select_categoria">
-                <option value="" selected>Escolha uma categoria</option>
+                <option value="" selected>
+                    Escolha uma categoria
+                </option>
                 <?php foreach ($categoriaDAO->readCategoria() as $key => $categoria) {?>
                 <option value="<?=$categoria['nome']?>">
                     <?=$categoria['nome']?>&#<?=$categoria['icone']?>

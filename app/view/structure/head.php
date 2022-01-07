@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" />
 
 <!-- Arquivo CSS -->
-<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="stylesheet" href="../../assets/css/styles.css" />
 
 <!-- Owl Carousel -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"

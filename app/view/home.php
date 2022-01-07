@@ -205,16 +205,6 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
     <!-- Scripts -->
     <script src="assets/js/scripts.js"></script>
 
-    <!-- Função para remover o padding e colocar o background escuro no navbar -->
-    <script>
-    $(window).scroll(function() {
-        if ($(document).scrollTop() > 50) {
-            $(".nav").addClass("affix");
-        } else {
-            $(".nav").removeClass("affix");
-        }
-    });
-    </script>
     <script>
     $(document).ready(function() //When the page is ready, load function
         {
@@ -271,6 +261,7 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
     });
     </script>
 
+    <!-- Botão que volta pro início -->
     <script>
     $(document).ready(function() {
         $(window).scroll(function() {

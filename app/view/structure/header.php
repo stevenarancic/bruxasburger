@@ -2,18 +2,16 @@
     <div class="container d-flex justify-content-between align-items-center">
         <div class="logo">
             <a href="home">
-                <img src="assets/img/bruxas_logo.png" alt="" style="width: 8rem; margin-top: -1.5rem">
+                <img src="../../assets/img/bruxas_logo.png" alt="" style="width: 8rem; margin-top: -1.5rem">
             </a>
         </div>
-        <div>
-            <ul class="list-inline fs-2">
-                <li>
-                    <a href="cardapio">Cardápio</a>
-                </li>
-                <li>
-                    <a href="filiais">Filiais</a>
-                </li>
-            </ul>
-        </div>
+        <ul class="list-inline fs-2">
+            <li>
+                <a href="cardapio" style="text-decoration: none!important; color: white;">Cardápio</a>
+            </li>
+            <li>
+                <a href="filiais" style="text-decoration: none!important; color: white;">Filiais</a>
+            </li>
+        </ul>
     </div>
 </div>

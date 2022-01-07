@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once 'vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 
 $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 $filialDAO = new \app\model\filiais\FilialDAO();
@@ -12,39 +12,35 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
 <html lang="en">
 
 <head>
-    <?php require_once 'app/view/structure/head.php'?>
+    <?php require_once 'structure/head.php'?>
     <title>
         Home - Bruxas Burger
     </title>
 </head>
 
 <body>
-    <?php require_once 'app/view/structure/header.php'?>
+    <?php require_once 'structure/header.php'?>
 
     <section style="min-height: 100vh">
         <div class="owl-carousel owl-item-filial-home owl-theme d-flex align-items-center">
             <div class="item">
                 <div class="col" style="position: inherit;">
-                    <img src="app/view/img1.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;"
-                        alt="">
+                    <img src="img1.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
                 </div>
             </div>
             <div class="item">
                 <div class="col" style="position: inherit;">
-                    <img src="app/view/img2.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;"
-                        alt="">
+                    <img src="img2.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
                 </div>
             </div>
             <div class="item">
                 <div class="col" style="position: inherit;">
-                    <img src="app/view/img3.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;"
-                        alt="">
+                    <img src="img3.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
                 </div>
             </div>
             <div class="item">
                 <div class="col" style="position: inherit;">
-                    <img src="app/view/img4.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;"
-                        alt="">
+                    <img src="img4.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
                 </div>
             </div>
 
@@ -201,7 +197,7 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
         </section>
     </section>
 
-    <?php require_once 'app/view/structure/footer.php'?>
+    <?php require_once 'structure/footer.php'?>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -231,7 +227,7 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
         });
     </script>
 
-    {# Owl Carousel - Carousels #}
+    <!-- Owl Carousel - Carousels -->
     <script type="text/javascript">
     $(document).ready(function() {
         $('.owl-filial').owlCarousel({
@@ -273,83 +269,6 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
             items: 1,
         })
     });
-    </script>
-
-    <!-- Pesquisa filiais -->
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $("#search").keypress(function() {
-            $.ajax({
-                type: 'POST',
-                url: '/bruxasburger/app/controller/filiais/pesquisa.php',
-                data: {
-                    cidade: $("#search").val(),
-                },
-                success: function(data) {
-                    $("#output").html(data);
-                }
-            });
-        });
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-        $.ajax({
-            type: 'POST',
-            url: '/bruxasburger/app/controller/filiais/pesquisa.php',
-            data: {
-                cidade: $("#search").val(),
-            },
-            success: function(data) {
-                $("#output").html(data);
-            }
-        });
-    });
-    </script>
-
-    <!-- Pesquisa cardápio -->
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $("#search_cardapio").keypress(function() {
-            $.ajax({
-                type: 'POST',
-                url: '/bruxasburger/app/controller/itens_cardapio/pesquisa.php',
-                data: {
-                    item_cardapio: $("#search_cardapio").val(),
-                },
-                success: function(data) {
-                    $("#output_cardapio").html(data);
-                }
-            });
-        });
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-        $.ajax({
-            type: 'POST',
-            url: '/bruxasburger/app/controller/itens_cardapio/pesquisa.php',
-            data: {
-                item_cardapio: $("#search_cardapio").val(),
-            },
-            success: function(data) {
-                $("#output_cardapio").html(data);
-            }
-        });
-    });
-    </script>
-
-    <!-- Pesquisa cardápio por categoria -->
-    <script type="text/javascript">
-    function jsfunction(sel) {
-        texto = sel.options[sel.selectedIndex].value;
-        $.ajax({
-            type: 'POST',
-            url: '/bruxasburger/app/controller/itens_cardapio/pesquisa_por_categoria.php',
-            data: {
-                select_categoria: texto,
-            },
-            success: function(data) {
-                $("#output_cardapio").html(data);
-            }
-        });
-    }
     </script>
 
     <script>

@@ -71,7 +71,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
                             <button type="submit" class="btn btn-success">
                                 Salvar
                             </button>
-                            <a href="../../../../../index.php?id_delete_categoria=<?=$categoria['id']?>"
+                            <a href="../../../../controller/categorias/delete.php?id_delete_categoria=<?=$categoria['id']?>"
                                 class="btn btn-danger">
                                 Apagar
                             </a>

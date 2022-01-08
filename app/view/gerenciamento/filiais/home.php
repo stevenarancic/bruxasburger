@@ -64,8 +64,8 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $itemImage
                             <?=$filial['rua']?> - <?=$filial['numero']?>, <?=$filial['bairro']?>
                         </h6>
                         <p class="card-text"><?=$filial['telefone']?></p>
-                        <a href="../../../../index.php?id=<?=$filial['id']?>" class="btn btn-light">Editar</a>
-                        <a href="../../../../index.php?id_delete=<?=$filial['id']?>&nomeFilial=<?=$filial['cidade']?>"
+                        <a href="update.php?id=<?=$filial['id']?>" class="btn btn-light">Editar</a>
+                        <a href="../../../controller/filiais/delete.php?id_delete=<?=$filial['id']?>&nomeFilial=<?=$filial['cidade']?>"
                             class="btn btn-danger">Apagar</a>
                     </div>
                 </div>

@@ -1,7 +1,11 @@
 <?php
 session_start();
 
+require_once '../../../../../vendor/autoload.php';
+
 $condicional = "update";
+
+$itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +23,11 @@ $condicional = "update";
             Editar Item
         </h1>
         <a href="home" class="btn btn-light mb-3">Voltar</a>
-        <?php include 'structure/form.php'?>
+        <?php
+foreach ($itemCardapioDAO->filtrarItemCardapio($_GET['id']) as $key => $value) {
+    include 'structure/form.php';
+}
+?>
     </section>
 </body>
 

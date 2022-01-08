@@ -1,6 +1,5 @@
 <!-- Depois deixar o create "mudavel" para também poder ser um update.php -->
-<form action="../../../../bruxasburger/app/controller/filiais/<?=$condicional?>.php" method="post"
-    enctype="multipart/form-data">
+<form action="../../../../controller/filiais/<?=$condicional?>.php" method="post" enctype="multipart/form-data">
     <div class="form-floating mb-3">
         <input type="tel" class="form-control" placeholder=" " name="telefone" value="<?=$filial['telefone']?>">
         <label for="floatingInput">

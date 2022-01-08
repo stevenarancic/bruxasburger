@@ -7,4 +7,4 @@ $filial->setId($_POST['id']);
 $filialDAO = new \app\model\filiais\FilialDAO();
 $filialDAO->updateFilial($filial);
 
-header("location: ../../../gerenciamento/filiais/home.php");
+header('location: ../../view/gerenciamento/filiais/home.php');

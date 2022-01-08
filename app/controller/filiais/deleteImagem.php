@@ -17,4 +17,4 @@ foreach ($imagemFilialDAO->filtrarImagemPorId($_GET['id_imagem']) as $key => $it
 
 $imagemFilialDAO->deleteImagemFilial($_GET['id_imagem']);
 
-header("location: ../../../gerenciamento/filiais/home.php");
+header('location: ../../view/gerenciamento/filiais/home.php');

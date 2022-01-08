@@ -16,4 +16,4 @@ if ($imagemUpload != "") {
 $itemCardapio->setId($_POST['id']);
 $itemCardapioDAO->updateItemCardapio($itemCardapio);
 
-header("location: ../../../gerenciamento/cardapio/itens/home.php");
+header('location: ../../view/gerenciamento/cardapio/itens/home.php');

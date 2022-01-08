@@ -13,4 +13,4 @@ $itemCardapio = new \app\model\itens_cardapio\ItemCardapio($_POST['nome'], $_POS
 // Cadastro do item em sí
 $itemCardapioDAO->createItemCardapio($itemCardapio);
 
-header("location: ../../../gerenciamento/cardapio/itens/home");
+header("location: ../../../gerenciamento/cardapio/itens/home.php");

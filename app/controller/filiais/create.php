@@ -32,4 +32,4 @@ for ($i = 0; $i < $total; $i++) {
     $imagemFilialDAO->createImagemFilial($imagemFilial);
 }
 
-header("location: ../../../gerenciamento/filiais/home");
+header("location: ../../../gerenciamento/filiais/home.php");

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once '../../../../vendor/autoload.php';
+require_once '../../../../../vendor/autoload.php';
 
 $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 ?>
@@ -19,9 +19,9 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
         <h1 class="p-5 d-flex justify-content-center">
             Itens do cardápio
         </h1>
-        <a href="../home" class="btn btn-light">Voltar</a>
+        <a href="../home.php" class="btn btn-light">Voltar</a>
 
-        <a href="create" class="btn btn-success w-100 mb-3 mt-3">Cadastrar Item</a>
+        <a href="create.php" class="btn btn-success w-100 mb-3 mt-3">Cadastrar Item</a>
 
         <?php foreach ($itemCardapioDAO->readItemCardapio() as $key => $itemCardapio) {?>
         <div class="card mb-3" style="position: inherit">
@@ -41,9 +41,10 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
                         <p class="card-text">
                             <?=$itemCardapio['descricao']?>
                         </p>
-                        <a href="../../../../index.php?id_update_itemcardapio=<?=$itemCardapio['item_id']?>"
+                        <a href="../../../../../index.php?id_update_itemcardapio=<?=$itemCardapio['item_id']?>"
                             class="btn btn-light">Editar</a>
-                        <a href="../../../../index.php?id_delete_itemcardapio=<?=$itemCardapio['item_id']?>"
+
+                        <a href="../../../../../index.php?id_delete_itemcardapio=<?=$itemCardapio['item_id']?>"
                             class="btn btn-danger">Apagar</a>
                     </div>
                 </div>

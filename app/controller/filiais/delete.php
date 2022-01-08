@@ -20,4 +20,4 @@ if (file_exists($dir)) {
     rmdir($dir);
 }
 
-header("location: ../../../gerenciamento/filiais/home");
+header("location: ../../../gerenciamento/filiais/home.php");

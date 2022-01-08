@@ -170,9 +170,9 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                             <?php
 foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
     if ($key === array_key_first($imagemFilialDAO->filtrarPorFilial($filial['id']))) {?>
-                            <img src="assets/img/filiais/{{ filial.cidade }}/{{ itemImagem.nome }}"
+                            <img src="assets/img/filiais/<?=$filial['cidade']?>/<?=$itemImagem['nome']?>"
                                 class="img-fluid rounded card-img-top" alt="..." data-bs-toggle="modal"
-                                data-bs-target="#modalImagem{{ filial.id }}"
+                                data-bs-target="#modalImagem<?=$filial['id']?>"
                                 style="height: 25rem; width: 100%; object-fit: cover">
                             <?php
 }}?>

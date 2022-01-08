@@ -12,9 +12,11 @@
         <h1 class="p-5 d-flex justify-content-center">
             Gerenciamento
         </h1>
-        <a href="filiais/home" class="btn btn-success w-100 mb-3">Filiais</a>
-        <a href="cardapio/home" class="btn primary w-100">Cardápio</a>
+        <a href="filiais/home.php" class="btn btn-success w-100 mb-3">Filiais</a>
+        <a href="cardapio/home.php" class="btn primary w-100">Cardápio</a>
     </section>
+
+    <?php require_once 'structure/footer.php'?>
 </body>
 
 </html>

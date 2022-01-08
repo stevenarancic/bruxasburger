@@ -12,9 +12,9 @@
         <h1 class="p-5 d-flex justify-content-center">
             Cardápio
         </h1>
-        <a href="../home" class="btn btn-light">Voltar</a>
-        <a href="categorias/home" class="btn btn-primary w-100 mb-3">Categorias</a>
-        <a href="itens/home" class="btn btn-primary w-100 mb-3">Itens do cardápio</a>
+        <a href="../index.php" class="btn btn-light">Voltar</a>
+        <a href="categorias/home.php" class="btn btn-primary w-100 mb-3">Categorias</a>
+        <a href="itens/home.php" class="btn btn-primary w-100 mb-3">Itens do cardápio</a>
     </section>
 </body>
 

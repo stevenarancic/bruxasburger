@@ -20,7 +20,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
             Gerenciamento de Categorias
         </h1>
         <div class="d-flex justify-content-between">
-            <a href="../home" class="btn btn-light">
+            <a href="../home.php" class="btn btn-light">
                 Voltar
             </a>
             <div class="d-flex flex-row">

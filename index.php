@@ -14,6 +14,26 @@ $twig = new Twig\Environment($loader, [
     'cache' => false,
 ]);
 
+if (isset($_GET['pesquisaEnviada'])) {
+    echo " <script src=\"node_modules/sweetalert2/dist/sweetalert2.all.js\"></script>
+    <script>
+            Swal.fire({
+                title: title,
+                text: text,
+                icon: 'warning',
+                showConfirmButton: true,
+                confirmButtonText: 'Sim',
+                confirmButtonColor: '#78c696',
+                showDenyButton: true,
+                denyButtonText: 'Não',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                } else if (result.isDenied) {}
+            })
+    </script>
+   ";
+}
+
 // Filial
 if (isset($_GET['id']) and $_GET['id'] != "") {
     foreach ($filialDAO->filtrarFilial($_GET['id']) as $key => $filial) {

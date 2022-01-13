@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Sobre
+{% endblock %}
+
+{% block content %}
+<section class="container" style="min-height: 71.1vh">
+    <form action="app/controller/pesquisa_satisfacao/cadastroPesquisa.php" method="post">
+        <h1>Pesquisa de satisfação</h1>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome e Sobrenome"
+                name="nome">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Endereço de e-mail</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
+                name="email">
+        </div>
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Como foi sua experiência? conte-nos
+                tudo.</label>
+            <textarea class="form-control" id="descricao" rows="5" name="descricao"></textarea>
+        </div>
+        <div class="mb-3">
+            que nosa você nos da?
+            colocar estrelinhas que vai de 1 a 5.
+        </div>
+        <button type="submit" class="btn btn-primary">Pronto</button>
+    </form>
+</section>
+{% endblock %}

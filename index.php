@@ -16,16 +16,22 @@ $twig = new Twig\Environment($loader, [
 
 if (isset($_GET['pesquisaEnviada'])) {
     echo "
-    <div class=\"toast\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\" style=\"display: block!important; position: fixed; bottom: 8px; z-index: 999; right: 8px; width: 300px;\">
+    <div id=\"toastPesquisaEnviada\" class=\"toast\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\" style=\"display: block!important; position: fixed; bottom: 8px; z-index: 999; right: 8px; width: 300px;\">
         <div class=\"toast-header\">
             <strong class=\"me-auto\">Obrigado!</strong>
             <small>agora</small>
-            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"toast\" aria-label=\"Close\"></button>
+            <button type=\"button\" class=\"btn btn-light\" style=\"padding: 0!important; margin-left: 5px; margin-top: 4px\" onclick=\"ocultar()\"><i class=\"bi bi-x\"></i></button>
         </div>
         <div class=\"toast-body\">
             Sua pesquisa foi salva, obrigado por nos ajudar a melhorar!
         </div>
-    </div>";
+    </div>
+    <script>
+        function ocultar() {
+            var x = document.getElementById(\"toastPesquisaEnviada\");
+            x.style.display = \"none\";
+        }
+    </script>";
 }
 
 // Filial

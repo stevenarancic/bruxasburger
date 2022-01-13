@@ -15,23 +15,17 @@ $twig = new Twig\Environment($loader, [
 ]);
 
 if (isset($_GET['pesquisaEnviada'])) {
-    echo " <script src=\"node_modules/sweetalert2/dist/sweetalert2.all.js\"></script>
-    <script>
-            Swal.fire({
-                title: title,
-                text: text,
-                icon: 'warning',
-                showConfirmButton: true,
-                confirmButtonText: 'Sim',
-                confirmButtonColor: '#78c696',
-                showDenyButton: true,
-                denyButtonText: 'Não',
-            }).then((result) => {
-                if (result.isConfirmed) {
-                } else if (result.isDenied) {}
-            })
-    </script>
-   ";
+    echo "
+    <div class=\"toast\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\" style=\"display: block!important; position: fixed; bottom: 8px; z-index: 999; right: 8px; width: 300px;\">
+        <div class=\"toast-header\">
+            <strong class=\"me-auto\">Obrigado!</strong>
+            <small>agora</small>
+            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"toast\" aria-label=\"Close\"></button>
+        </div>
+        <div class=\"toast-body\">
+            Sua pesquisa foi salva, obrigado por nos ajudar a melhorar!
+        </div>
+    </div>";
 }
 
 // Filial

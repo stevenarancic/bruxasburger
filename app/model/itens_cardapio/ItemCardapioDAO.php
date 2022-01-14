@@ -82,6 +82,10 @@ class ItemCardapioDAO
     {
         $caminhoSalvamentoImagem = "../../../assets/img/cardapio_itens/{$nomeDaImagem}";
 
+        if (!file_exists('../../../assets/img/cardapio_itens/')) {
+            mkdir('../../../assets/img/cardapio_itens/', 0777, true);
+        }
+
         move_uploaded_file($caminhoAtualImagem, $caminhoSalvamentoImagem);
     }
 
@@ -89,6 +93,10 @@ class ItemCardapioDAO
     {
         $caminhoAtualImagem = $_FILES['imagem_item_cardapio']['tmp_name'];
         $caminhoNovaImagem = "../../../assets/img/cardapio_itens/{$nomeImagem}";
+
+        if (!file_exists('../../../assets/img/cardapio_itens/')) {
+            mkdir('../../../assets/img/cardapio_itens/', 0777, true);
+        }
 
         if (file_exists($caminhoNovaImagem)) {
             if ($nomeImagem != "") {

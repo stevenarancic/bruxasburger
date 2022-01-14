@@ -12,7 +12,7 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 <html lang="en">
 
 <head>
-    <?php require_once '../../structure/head.php'?>
+    <?php require_once '../../structure/head.php' ?>
 
     <title>Editar - Gerenciamento</title>
 </head>
@@ -22,12 +22,12 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
         <h1 class="p-5 d-flex justify-content-center">
             Editar Item
         </h1>
-        <a href="home" class="btn btn-light mb-3">Voltar</a>
+        <a href="home.php" class="btn btn-light mb-3">Voltar</a>
         <?php
-foreach ($itemCardapioDAO->filtrarItemCardapio($_GET['id']) as $key => $value) {
-    include 'structure/form.php';
-}
-?>
+        foreach ($itemCardapioDAO->filtrarItemCardapio($_GET['id']) as $key => $value) {
+            include 'structure/form.php';
+        }
+        ?>
     </section>
 </body>
 

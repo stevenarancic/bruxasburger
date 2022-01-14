@@ -9,7 +9,7 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 <html lang="en">
 
 <head>
-    <?php require_once '../../structure/head.php'?>
+    <?php require_once '../../structure/head.php' ?>
 
     <title>Itens - Gerenciamento</title>
 </head>
@@ -23,34 +23,34 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 
         <a href="create.php" class="btn btn-success w-100 mb-3 mt-3">Cadastrar Item</a>
 
-        <?php foreach ($itemCardapioDAO->readItemCardapio() as $key => $itemCardapio) {?>
+        <?php foreach ($itemCardapioDAO->readItemCardapio() as $key => $itemCardapio) { ?>
         <div class="card mb-3" style="position: inherit">
             <div class=" row g-0">
                 <div class="col-md-4">
-                    <img src="../../../../assets/img/cardapio_itens/<?=$itemCardapio['imagem']?>"
+                    <img src="../../../../../assets/img/cardapio_itens/<?= $itemCardapio['imagem'] ?>"
                         class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-header bg-danger text-white" style="font-weight: bold;">
-                        <?=$itemCardapio['nome']?> &#<?=$itemCardapio['icone']?>
+                        <?= $itemCardapio['nome'] ?> &#<?= $itemCardapio['icone'] ?>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <?=$itemCardapio['item_nome']?>
+                            <?= $itemCardapio['item_nome'] ?>
                         </h4>
                         <p class="card-text">
-                            <?=$itemCardapio['descricao']?>
+                            <?= $itemCardapio['descricao'] ?>
                         </p>
-                        <a href="update.php?id_update_itemcardapio=<?=$itemCardapio['item_id']?>"
+                        <a href="update.php?id_update_itemcardapio=<?= $itemCardapio['item_id'] ?>"
                             class="btn btn-light">Editar</a>
 
-                        <a href="../../../../controller/itens_cardapio/delete.php?id_delete_itemcardapio=<?=$itemCardapio['item_id']?>"
+                        <a href="../../../../controller/itens_cardapio/delete.php?id_delete_itemcardapio=<?= $itemCardapio['item_id'] ?>"
                             class="btn btn-danger">Apagar</a>
                     </div>
                 </div>
             </div>
         </div>
-        <?php }?>
+        <?php } ?>
     </section>
 </body>
 

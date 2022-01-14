@@ -12,14 +12,14 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
 <html lang="en">
 
 <head>
-    <?php require_once 'structure/head.php'?>
+    <?php require_once 'structure/head.php' ?>
     <title>
         Home - Bruxas Burger
     </title>
 </head>
 
 <body>
-    <?php require_once 'structure/header.php'?>
+    <?php require_once 'structure/header.php' ?>
 
     <section style="min-height: 100vh">
         <div class="owl-carousel owl-item-filial-home owl-theme d-flex align-items-center">
@@ -97,25 +97,25 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
             <!-- Cardapio -->
             <h2 class="text-center mt-4">Confira nosso cardápio</h2>
             <div class="owl-carousel owl-item-cardapio owl-theme">
-                <?php foreach ($itemCardapioDAO->readItemCardapio() as $key => $itemCardapio) {?>
+                <?php foreach ($itemCardapioDAO->readItemCardapio() as $key => $itemCardapio) { ?>
                 <div class="item">
                     <div class="col">
                         <div class="card shadow ms-3 me-3 mb-4 mt-4">
-                            <img src="assets/img/cardapio_itens/{{ itemCardapio.imagem }}" class="card-img-top"
+                            <img src="../../assets/img/cardapio_itens/{{ itemCardapio.imagem }}" class="card-img-top"
                                 alt="..." style="height: 20em; object-fit: cover;">
                             <div class="card-body">
-                                <h5 class="card-title"><?=$itemCardapio['item_nome']?></h5>
+                                <h5 class="card-title"><?= $itemCardapio['item_nome'] ?></h5>
                                 <h6 class="card-subtitle mb-2 text-muted">
-                                    <?=$itemCardapio['nome']?>&#<?=$itemCardapio['icone']?>;
+                                    <?= $itemCardapio['nome'] ?>&#<?= $itemCardapio['icone'] ?>;
                                 </h6>
                                 <p class="card-text">
-                                    <?=$itemCardapio['descricao']?>
+                                    <?= $itemCardapio['descricao'] ?>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php }?>
+                <?php } ?>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="cardapio.php" class="btn btn-warning fs-5">Ver todos</a>
@@ -142,18 +142,18 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
             </p>
             <!-- Filiais -->
             <h2 class="text-center mt-4">Encontre um Bruxas perto de você</h2>
-            <?php foreach ($filialDAO->readFilial() as $key => $filial) {?>
-            <div class="modal fade" id="modalImagem<?=$filial['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+            <?php foreach ($filialDAO->readFilial() as $key => $filial) { ?>
+            <div class="modal fade" id="modalImagem<?= $filial['id'] ?>" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-body">";
-                            <?php foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $itemImagem) {?>
-                            <img src="assets/img/filiais/<?=$filial['cidade']?>/<?=$itemImagem['nome']?>"
+                            <?php foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $itemImagem) { ?>
+                            <img src="../../assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
                                 class="img-fluid rounded card-img-top mb-3" alt="..." data-bs-toggle="modal"
-                                data-bs-target="#modalImagem<?=$filial['id']?>"
+                                data-bs-target="#modalImagem<?= $filial['id'] ?>"
                                 style="height: 25rem; width: 100%; object-fit: cover">
-                            <?php }?>
+                            <?php } ?>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                             </div>
@@ -161,27 +161,28 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                     </div>
                 </div>
             </div>
-            <?php }?>
+            <?php } ?>
             <div class="owl-carousel owl-filial owl-theme">
-                <?php foreach ($filialDAO->readFilial() as $key => $filial) {?>
+                <?php foreach ($filialDAO->readFilial() as $key => $filial) { ?>
                 <div class="item">
                     <div class="col" style="position: inherit;">
                         <div class="card shadow ms-3 me-3 mb-4 mt-4" style="position: inherit;">
                             <?php
-foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
-    if ($key === array_key_first($imagemFilialDAO->filtrarPorFilial($filial['id']))) {?>
-                            <img src="assets/img/filiais/<?=$filial['cidade']?>/<?=$itemImagem['nome']?>"
+                                foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
+                                    if ($key === array_key_first($imagemFilialDAO->filtrarPorFilial($filial['id']))) { ?>
+                            <img src="../../assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
                                 class="img-fluid rounded card-img-top" alt="..." data-bs-toggle="modal"
-                                data-bs-target="#modalImagem<?=$filial['id']?>"
+                                data-bs-target="#modalImagem<?= $filial['id'] ?>"
                                 style="height: 25rem; width: 100%; object-fit: cover">
                             <?php
-}}?>
+                                    }
+                                } ?>
                             <div class="card-body">
-                                <h5 class="card-title">Bruxas Burger <?=$filial['cidade']?></h5>
+                                <h5 class="card-title">Bruxas Burger <?= $filial['cidade'] ?></h5>
                                 <h6 class="card-subtitle mb-2 text-muted">
-                                    <?=$filial['rua']?> - <?=$filial['numero']?>, <?=$filial['bairro']?>
+                                    <?= $filial['rua'] ?> - <?= $filial['numero'] ?>, <?= $filial['bairro'] ?>
                                 </h6>
-                                <a href="https://api.whatsapp.com/send?phone=<?=$filial['telefone']?>"
+                                <a href="https://api.whatsapp.com/send?phone=<?= $filial['telefone'] ?>"
                                     class="btn btn-success w-100" style="position: inherit;">
                                     <i class="bi bi-whatsapp"></i> Chamar no Whatsapp
                                 </a>
@@ -189,7 +190,7 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
                         </div>
                     </div>
                 </div>
-                <?php }?>
+                <?php } ?>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="filiais.php" class="btn btn-warning fs-5">Ver todos</a>
@@ -197,7 +198,7 @@ foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
         </section>
     </section>
 
-    <?php require_once 'structure/footer.php'?>
+    <?php require_once 'structure/footer.php' ?>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

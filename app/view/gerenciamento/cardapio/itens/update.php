@@ -6,6 +6,7 @@ require_once '../../../../../vendor/autoload.php';
 $condicional = "update";
 
 $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
+$categoriaDAO = new \app\model\categorias\CategoriaDAO();
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +25,7 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
         </h1>
         <a href="home.php" class="btn btn-light mb-3">Voltar</a>
         <?php
-        foreach ($itemCardapioDAO->filtrarItemCardapio($_GET['id']) as $key => $value) {
+        foreach ($itemCardapioDAO->filtrarItemCardapio($_GET['id_update_itemcardapio']) as $key => $itemCardapio) {
             include 'structure/form.php';
         }
         ?>

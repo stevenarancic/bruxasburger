@@ -2,7 +2,11 @@
 <form action="../../../../controller/itens_cardapio/<?= $condicional ?>.php" method="post"
     enctype="multipart/form-data">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" placeholder=" " name="nome" value="<?php if (isset($itemCardapio)) {
+        <input type="text" class="form-control" placeholder=" " name="nome" value="<?php
+
+                                                                                    use app\model\Conexao;
+
+                                                                                    if (isset($itemCardapio)) {
                                                                                         echo $itemCardapio['nome'];
                                                                                     } ?>">
         <label for="floatingInput">
@@ -40,12 +44,12 @@
                             echo $itemCardapio['categoria_id'];
                         } ?>" selected>
             <?php if (isset($itemCardapio)) {
-                # code...
-            } else {
-                # code...
-            } ?>
-
-            Escolha uma categoria (opcional)
+                foreach (Conexao::getInstance()->query("SELECT nome, icone FROM cardapio_categoria WHERE ID = {$itemCardapio['categoria_id']}") as $key => $categoria) {
+                    echo "{$categoria['nome']}&#{$categoria['icone']}";
+                }
+            } else { ?>
+            Escolha uma categoria
+            <?php } ?>
         </option>
         <?php foreach ($categoriaDAO->readCategoria() as $key => $categoria) { ?>
         <option value="<?= $categoria['id'] ?>">

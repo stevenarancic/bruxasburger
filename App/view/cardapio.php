@@ -53,7 +53,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
         $("#search_cardapio").keypress(function() {
             $.ajax({
                 type: 'POST',
-                url: '../controller/itens_cardapio/pesquisa.php',
+                url: 'controller/itens_cardapio/pesquisa',
                 data: {
                     item_cardapio: $("#search_cardapio").val(),
                 },
@@ -66,7 +66,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
     document.addEventListener("DOMContentLoaded", function() {
         $.ajax({
             type: 'POST',
-            url: '../controller/itens_cardapio/pesquisa.php',
+            url: 'controller/itens_cardapio/pesquisa',
             data: {
                 item_cardapio: $("#search_cardapio").val(),
             },

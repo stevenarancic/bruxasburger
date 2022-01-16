@@ -29,7 +29,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                     <?php
                         foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $itemImagem) {
                             if ($key == 0) { ?>
-                    <img src="../../../../assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
+                    <img src="assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
                         class="img-fluid rounded" style="height: 12rem; width: 100%; object-fit: cover" alt=""
                         data-bs-toggle="modal" data-bs-target="#exampleModal<?= $filial['id'] ?>">
                     <?php
@@ -42,7 +42,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                             <div class="modal-content">
                                 <div class="modal-body">
                                     <?php foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $itemImagem) { ?>
-                                    <img src="../../../../assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
+                                    <img src="assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
                                         class="img-fluid rounded" alt="Imagem indisponível :("
                                         style="height: 100%; width: 100%; object-fit: cover">
                                     <a href="../../../controller/filiais/deleteImagem.php?id_imagem=<?= $itemImagem['id'] ?>&filial=<?= $filial['cidade'] ?>"

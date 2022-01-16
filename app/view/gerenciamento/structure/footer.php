@@ -2,8 +2,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <!-- Scripts -->
-<script src="../../../assets/js/scripts.js"></script>
-<script src="../../../assets/js/hideShowElements.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/hideShowElements.js"></script>
 
 
 <!-- Bootstrap scripts -->

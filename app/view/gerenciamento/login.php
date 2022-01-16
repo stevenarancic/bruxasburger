@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php require_once 'structure/head.php'?>
+    <?php require_once 'app/view/structure/head.php' ?>
 
     <title>Login - Gerenciamento</title>
 </head>

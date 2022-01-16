@@ -7,7 +7,7 @@ require_once 'vendor/autoload.php';
 <html lang="en">
 
 <head>
-    <?php require_once 'structure/head.php' ?>
+    <?php require_once 'app/view/structure/head.php' ?>
 
     <title>
         Filiais - Bruxas Burger
@@ -15,7 +15,7 @@ require_once 'vendor/autoload.php';
 </head>
 
 <body>
-    <?php require_once 'structure/header.php' ?>
+    <?php require_once 'app/view/structure/header.php' ?>
 
     <section class="container col-sm-12 col-md-5 col-lg-5">
         <h1 class="mt-4">Filiais</h1>
@@ -27,7 +27,7 @@ require_once 'vendor/autoload.php';
         <div id="output"></div>
     </section>
 
-    <?php require_once 'structure/footer.php' ?>
+    <?php require_once 'app/view/structure/footer.php' ?>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

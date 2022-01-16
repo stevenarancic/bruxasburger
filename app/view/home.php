@@ -12,6 +12,50 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
 
 <head>
     <?php require_once 'app/view/structure/head.php' ?>
+
+    <style>
+    .bounce {
+        position: absolute;
+        left: 50%;
+        height: 50px;
+        width: 50px;
+        -webkit-animation: bounce 1s infinite;
+    }
+
+    @-webkit-keyframes bounce {
+        0% {
+            bottom: 05px;
+        }
+
+        25%,
+        75% {
+            bottom: 15px;
+        }
+
+        50% {
+            bottom: 20px;
+        }
+
+        100% {
+            bottom: 0;
+        }
+    }
+
+    @media (max-width: 900px) {
+        #teste {
+            position: absolute;
+            left: 45%;
+        }
+    }
+
+    @media (min-width: 900px) {
+        #teste {
+            position: absolute;
+            left: 48.5%;
+        }
+    }
+    </style>
+
     <title>
         Home - Bruxas Burger
     </title>
@@ -49,49 +93,6 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
 
         </div>
 
-        <style>
-        .bounce {
-            position: absolute;
-            left: 50%;
-            height: 50px;
-            width: 50px;
-            -webkit-animation: bounce 1s infinite;
-        }
-
-        @-webkit-keyframes bounce {
-            0% {
-                bottom: 05px;
-            }
-
-            25%,
-            75% {
-                bottom: 15px;
-            }
-
-            50% {
-                bottom: 20px;
-            }
-
-            100% {
-                bottom: 0;
-            }
-        }
-
-        @media (max-width: 900px) {
-            #teste {
-                position: absolute;
-                left: 45%;
-            }
-        }
-
-        @media (min-width: 900px) {
-            #teste {
-                position: absolute;
-                left: 48.5%;
-            }
-        }
-        </style>
-
         <div class="d-flex justify-content-center">
             <button id="teste" onclick="scrollar()" class="btn btn-danger text-white bounce"
                 style="margin-bottom: 3rem; z-index: 998;"><i class="bi bi-caret-down"></i></button>
@@ -121,7 +122,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                 <?php } ?>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="cardapio.php" class="btn btn-warning fs-5">Ver todos</a>
+                <a href="cardapio" class="btn btn-warning fs-5">Ver todos</a>
             </div>
 
             <h2 class="text-center mt-5 mb-4">Quem somos</h2>
@@ -196,7 +197,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                 <?php } ?>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="filiais.php" class="btn btn-warning fs-5">Ver todos</a>
+                <a href="filiais" class="btn btn-warning fs-5">Ver todos</a>
             </div>
         </section>
     </section>

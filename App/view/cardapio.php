@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-require_once '../../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $categoriaDAO = new \app\model\categorias\CategoriaDAO();
 ?>
@@ -9,7 +8,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
 <html lang="en">
 
 <head>
-    <?php require_once 'structure/head.php'?>
+    <?php require_once 'structure/head.php' ?>
 
     <title>
         Cardápio - Bruxas Burger
@@ -17,7 +16,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
 </head>
 
 <body>
-    <?php require_once 'structure/header.php'?>
+    <?php require_once 'structure/header.php' ?>
 
     <section class="container col-sm-12 col-md-5 col-lg-5">
         <h1 class="mt-4">Cardápio</h1>
@@ -29,24 +28,24 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
                 <option value="" selected>
                     Escolha uma categoria
                 </option>
-                <?php foreach ($categoriaDAO->readCategoria() as $key => $categoria) {?>
-                <option value="<?=$categoria['nome']?>">
-                    <?=$categoria['nome']?>&#<?=$categoria['icone']?>
+                <?php foreach ($categoriaDAO->readCategoria() as $key => $categoria) { ?>
+                <option value="<?= $categoria['nome'] ?>">
+                    <?= $categoria['nome'] ?>&#<?= $categoria['icone'] ?>
                 </option>
-                <?php }?>
+                <?php } ?>
             </select>
         </div>
 
         <div id="output_cardapio"></div>
     </section>
 
-    <?php require_once 'structure/footer.php'?>
+    <?php require_once 'structure/footer.php' ?>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- Scripts -->
-    <script src="../../assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
     <!-- Pesquisa cardápio -->
     <script type="text/javascript">

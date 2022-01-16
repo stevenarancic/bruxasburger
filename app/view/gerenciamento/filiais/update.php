@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once '../../../../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $condicional = "update";
 
@@ -11,7 +11,7 @@ $filialDAO = new \app\model\filiais\FilialDAO();
 <html lang="en">
 
 <head>
-    <?php require_once '../structure/head.php'?>
+    <?php require_once '../structure/head.php' ?>
 
     <title>Editar - Gerenciamento</title>
 </head>
@@ -24,9 +24,9 @@ $filialDAO = new \app\model\filiais\FilialDAO();
         <a href="home.php" class="btn btn-light mb-3">Voltar</a>
 
         <?php
-foreach ($filialDAO->filtrarFilial($_GET['id']) as $key => $filial) {
-    require_once 'structure/form.php';
-}?>
+        foreach ($filialDAO->filtrarFilial($_GET['id']) as $key => $filial) {
+            require_once 'structure/form.php';
+        } ?>
     </section>
 </body>
 

@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-require_once '../../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 $filialDAO = new \app\model\filiais\FilialDAO();
@@ -12,35 +11,39 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
 <html lang="en">
 
 <head>
-    <?php require_once 'structure/head.php' ?>
+    <?php require_once 'app/view/structure/head.php' ?>
     <title>
         Home - Bruxas Burger
     </title>
 </head>
 
 <body>
-    <?php require_once 'structure/header.php' ?>
+    <?php require_once 'app/view/structure/header.php' ?>
 
     <section style="min-height: 100vh">
         <div class="owl-carousel owl-item-filial-home owl-theme d-flex align-items-center">
             <div class="item">
                 <div class="col" style="position: inherit;">
-                    <img src="img1.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
+                    <img src="app/view/img1.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;"
+                        alt="">
                 </div>
             </div>
             <div class="item">
                 <div class="col" style="position: inherit;">
-                    <img src="img2.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
+                    <img src="app/view/img2.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;"
+                        alt="">
                 </div>
             </div>
             <div class="item">
                 <div class="col" style="position: inherit;">
-                    <img src="img3.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
+                    <img src="app/view/img3.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;"
+                        alt="">
                 </div>
             </div>
             <div class="item">
                 <div class="col" style="position: inherit;">
-                    <img src="img4.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;" alt="">
+                    <img src="app/view/img4.png" style="filter: brightness(70%); height: 90vh; object-fit: cover;"
+                        alt="">
                 </div>
             </div>
 
@@ -101,7 +104,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                 <div class="item">
                     <div class="col">
                         <div class="card shadow ms-3 me-3 mb-4 mt-4">
-                            <img src="../../assets/img/cardapio_itens/{{ itemCardapio.imagem }}" class="card-img-top"
+                            <img src="assets/img/cardapio_itens/{{ itemCardapio.imagem }}" class="card-img-top"
                                 alt="..." style="height: 20em; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $itemCardapio['item_nome'] ?></h5>
@@ -149,7 +152,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                     <div class="modal-content">
                         <div class="modal-body">";
                             <?php foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $itemImagem) { ?>
-                            <img src="../../assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
+                            <img src="assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
                                 class="img-fluid rounded card-img-top mb-3" alt="..." data-bs-toggle="modal"
                                 data-bs-target="#modalImagem<?= $filial['id'] ?>"
                                 style="height: 25rem; width: 100%; object-fit: cover">
@@ -170,7 +173,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                             <?php
                                 foreach ($imagemFilialDAO->filtrarPorFilial($filial['id']) as $key => $value) {
                                     if ($key === array_key_first($imagemFilialDAO->filtrarPorFilial($filial['id']))) { ?>
-                            <img src="../../assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
+                            <img src="assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
                                 class="img-fluid rounded card-img-top" alt="..." data-bs-toggle="modal"
                                 data-bs-target="#modalImagem<?= $filial['id'] ?>"
                                 style="height: 25rem; width: 100%; object-fit: cover">
@@ -198,7 +201,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
         </section>
     </section>
 
-    <?php require_once 'structure/footer.php' ?>
+    <?php require_once 'app/view/structure/footer.php' ?>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

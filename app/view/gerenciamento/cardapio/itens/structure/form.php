@@ -39,6 +39,12 @@
         <option value="<?php if (isset($itemCardapio)) {
                             echo $itemCardapio['categoria_id'];
                         } ?>" selected>
+            <?php if (isset($itemCardapio)) {
+                # code...
+            } else {
+                # code...
+            } ?>
+
             Escolha uma categoria (opcional)
         </option>
         <?php foreach ($categoriaDAO->readCategoria() as $key => $categoria) { ?>

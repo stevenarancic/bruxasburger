@@ -83,7 +83,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
         texto = sel.options[sel.selectedIndex].value;
         $.ajax({
             type: 'POST',
-            url: '../controller/itens_cardapio/pesquisa_por_categoria.php',
+            url: 'controller/itens_cardapio/pesquisa-por-categoria',
             data: {
                 select_categoria: texto,
             },

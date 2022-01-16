@@ -11,7 +11,7 @@ $filialDAO = new \app\model\filiais\FilialDAO();
 <html lang="en">
 
 <head>
-    <?php require_once 'app/view/structure/head.php' ?>
+    <?php require_once 'app/view/gerenciamento/structure/head.php' ?>
 
     <title>Editar - Gerenciamento</title>
 </head>
@@ -25,7 +25,7 @@ $filialDAO = new \app\model\filiais\FilialDAO();
 
         <?php
         foreach ($filialDAO->filtrarFilial($_GET['id']) as $key => $filial) {
-            require_once 'app/view/structure/form.php';
+            require_once 'app/view/gerenciamento/structure/form.php';
         } ?>
     </section>
 </body>

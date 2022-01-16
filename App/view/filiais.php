@@ -40,7 +40,7 @@ require_once 'vendor/autoload.php';
         $("#search").keypress(function() {
             $.ajax({
                 type: 'POST',
-                url: '../controller/filiais/pesquisa.php',
+                url: 'app/controller/filiais/pesquisa.php',
                 data: {
                     cidade: $("#search").val(),
                 },
@@ -53,7 +53,7 @@ require_once 'vendor/autoload.php';
     document.addEventListener("DOMContentLoaded", function() {
         $.ajax({
             type: 'POST',
-            url: '../controller/filiais/pesquisa.php',
+            url: 'app/controller/filiais/pesquisa.php',
             data: {
                 cidade: $("#search").val(),
             },

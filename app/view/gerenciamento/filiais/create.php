@@ -6,7 +6,7 @@ $condicional = "create";
 <html lang="en">
 
 <head>
-    <?php require_once 'app/view/structure/head.php' ?>
+    <?php require_once 'app/view/gerenciamento/structure/head.php' ?>
 
     <title>Cadastro - Gerenciamento</title>
 </head>
@@ -18,7 +18,7 @@ $condicional = "create";
         </h1>
         <a href="home.php" class="btn btn-light mb-3">Voltar</a>
 
-        <?php require_once 'app/view/structure/form.php' ?>
+        <?php require_once 'app/view/gerenciamento/filiais/structure/form.php' ?>
     </section>
 </body>
 

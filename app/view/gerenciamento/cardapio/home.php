@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php require_once '../structure/head.php'?>
+    <?php require_once 'app/view/gerenciamento/structure/head.php' ?>
 
     <title>Cardápio - Gerenciamento</title>
 </head>
@@ -13,8 +13,8 @@
             Cardápio
         </h1>
         <a href="../index.php" class="btn btn-light">Voltar</a>
-        <a href="categorias/home.php" class="btn btn-primary w-100 mb-3">Categorias</a>
-        <a href="itens/home.php" class="btn btn-primary w-100 mb-3">Itens do cardápio</a>
+        <a href="cardapio/categorias" class="btn btn-primary w-100 mb-3">Categorias</a>
+        <a href="cardapio/itens" class="btn btn-primary w-100 mb-3">Itens do cardápio</a>
     </section>
 </body>
 

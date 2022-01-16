@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-require_once '../../../../../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $categoriaDAO = new \app\model\categorias\CategoriaDAO();
 ?>
@@ -9,7 +8,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
 <html lang="en">
 
 <head>
-    <?php require_once '../../structure/head.php'?>
+    <?php require_once 'app/view/gerenciamento/structure/head.php' ?>
 
     <title>Categorias - Gerenciamento</title>
 </head>
@@ -41,37 +40,37 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <?php foreach ($categoriaDAO->readCategoria() as $key => $categoria) {?>
+            <?php foreach ($categoriaDAO->readCategoria() as $key => $categoria) { ?>
             <div class="col">
                 <div class="card border-light shadow-lg">
                     <p class="fs-1 text-center mt-4">
-                        &#<?=$categoria['icone']?>;
+                        &#<?= $categoria['icone'] ?>;
                     </p>
                     <div class="card-body">
                         <form action="../../../../controller/categorias/update.php" method="post">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" placeholder=" " name="icone"
-                                    value="<?=$categoria['icone']?>">
+                                    value="<?= $categoria['icone'] ?>">
                                 <label for="">
                                     Ícone
                                 </label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" placeholder=" " name="nome"
-                                    value="<?=$categoria['nome']?>">
+                                    value="<?= $categoria['nome'] ?>">
                                 <label for="">
                                     Nome
                                 </label>
                             </div>
                             <div class="form-floating mb-3 d-none">
                                 <input type="number" class="form-control" placeholder=" " name="id"
-                                    value="<?=$categoria['id']?>">
+                                    value="<?= $categoria['id'] ?>">
                                 <label for=""></label>
                             </div>
                             <button type="submit" class="btn btn-success">
                                 Salvar
                             </button>
-                            <a href="../../../../controller/categorias/delete.php?id_delete_categoria=<?=$categoria['id']?>"
+                            <a href="../../../../controller/categorias/delete.php?id_delete_categoria=<?= $categoria['id'] ?>"
                                 class="btn btn-danger">
                                 Apagar
                             </a>
@@ -79,7 +78,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
                     </div>
                 </div>
             </div>
-            <?php }?>
+            <?php } ?>
         </div>
     </section>
 </body>

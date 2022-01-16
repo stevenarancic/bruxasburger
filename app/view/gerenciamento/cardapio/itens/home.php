@@ -8,7 +8,7 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 <html lang="en">
 
 <head>
-    <?php require_once '../../structure/head.php' ?>
+    <?php require_once 'app/view/gerenciamento/structure/head.php' ?>
 
     <title>Itens - Gerenciamento</title>
 </head>
@@ -20,7 +20,7 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
         </h1>
         <a href="../home.php" class="btn btn-light">Voltar</a>
 
-        <a href="create.php" class="btn btn-success w-100 mb-3 mt-3">Cadastrar Item</a>
+        <a href="itens/create" class="btn btn-success w-100 mb-3 mt-3">Cadastrar Item</a>
 
         <?php foreach ($itemCardapioDAO->readItemCardapio() as $key => $itemCardapio) { ?>
         <div class="card mb-3" style="position: inherit">

@@ -10,7 +10,7 @@ $condicional = "create";
 <html lang="en">
 
 <head>
-    <?php require_once '../../structure/head.php' ?>
+    <?php require_once 'app/view/gerenciamento/structure/head.php' ?>
 
     <title>Cadastro - Gerenciamento</title>
 </head>
@@ -21,7 +21,7 @@ $condicional = "create";
             Cadastro de Item
         </h1>
         <a href="home.php" class="btn btn-light mb-3">Voltar</a>
-        <?php include 'structure/form.php' ?>
+        <?php include 'app/view/gerenciamento/cardapio/itens/structure/form.php' ?>
     </section>
 </body>
 

@@ -7,4 +7,4 @@ $categoria->setId($_POST['id']);
 $categoriaDAO = new \app\model\categorias\CategoriaDAO();
 $categoriaDAO->updateCategoria($categoria);
 
-header('location: ../../view/gerenciamento/cardapio/categorias/home.php');
+header('location: ../../../gerenciamento/cardapio/categorias');

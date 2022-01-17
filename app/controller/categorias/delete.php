@@ -2,6 +2,6 @@
 require_once __DIR__ . "../../../../vendor/autoload.php";
 
 $categoriaDAO = new \app\model\categorias\CategoriaDAO();
-$categoriaDAO->deleteCategoria($_GET['id_delete_categoria']);
+$categoriaDAO->deleteCategoria($id);
 
-header('location: ../../view/gerenciamento/cardapio/categorias/home.php');
+header('location: ../../../gerenciamento/cardapio/categorias');

@@ -24,7 +24,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
             </a>
             <div class="d-flex flex-row">
                 <div id="div_create_categoria">
-                    <form action="../../../../controller/categorias/create.php" method="post" class="d-flex flex-row">
+                    <form action="../../controller/categorias/create" method="post" class="d-flex flex-row">
                         Nome:
                         <input type="text" name="nome" class="form-control ms-2 me-2" style="width: 200px;">
                         Icone:
@@ -47,7 +47,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
                         &#<?= $categoria['icone'] ?>;
                     </p>
                     <div class="card-body">
-                        <form action="../../../../controller/categorias/update.php" method="post">
+                        <form action="../../controller/categorias/update" method="post">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" placeholder=" " name="icone"
                                     value="<?= $categoria['icone'] ?>">
@@ -70,8 +70,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
                             <button type="submit" class="btn btn-success">
                                 Salvar
                             </button>
-                            <a href="../../../../controller/categorias/delete.php?id_delete_categoria=<?= $categoria['id'] ?>"
-                                class="btn btn-danger">
+                            <a href="../../controller/categorias/delete/<?= $categoria['id'] ?>" class="btn btn-danger">
                                 Apagar
                             </a>
                         </form>

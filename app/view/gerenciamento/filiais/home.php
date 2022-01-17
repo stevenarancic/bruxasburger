@@ -65,7 +65,8 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                         </h6>
                         <p class="card-text"><?= $filial['telefone'] ?></p>
                         <a href="update.php?id=<?= $filial['id'] ?>" class="btn btn-light">Editar</a>
-                        <a href="../../../controller/filiais/delete.php?id_delete=<?= $filial['id'] ?>&nomeFilial=<?= $filial['cidade'] ?>"
+                        <!-- <a href="../../../controller/filiais/delete.php?id_delete=<?= $filial['id'] ?>&nomeFilial=<?= $filial['cidade'] ?>" -->
+                        <a href="../controller/filiais/delete/<?= $filial['id'] ?>/<?= $filial['cidade'] ?>"
                             class="btn btn-danger">Apagar</a>
                     </div>
                 </div>

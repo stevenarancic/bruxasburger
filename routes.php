@@ -35,22 +35,22 @@ get('/bruxasburger/gerenciamento/filiais/update/$id', 'bruxasburger/app/view/ger
 
 // CONTROLLER - CATEGORIAS
 post('/bruxasburger/controller/categorias/create', 'bruxasburger/app/controller/categorias/create.php');
-post('/bruxasburger/controller/categorias/delete/$id', 'bruxasburger/app/controller/categorias/delete.php');
-post('/bruxasburger/controller/categorias/update/$id', 'bruxasburger/app/controller/categorias/update.php');
+get('/bruxasburger/controller/categorias/delete/$id', 'bruxasburger/app/controller/categorias/delete.php');
+get('/bruxasburger/controller/categorias/update/$id', 'bruxasburger/app/controller/categorias/update.php');
 
 // CONTROLLER - FILIAIS
-post('/bruxasburger/controller/filiais/create', 'bruxasburger/app/controller/filiias/create.php');
-post('/bruxasburger/controller/filiais/delete/$id', 'bruxasburger/app/controller/filiias/delete.php');
-post('/bruxasburger/controller/filiais/deleteImagem/$id', 'bruxasburger/app/controller/filiias/deleteImagem.php');
+post('/bruxasburger/controller/filiais/create', 'bruxasburger/app/controller/filiais/create.php');
+get('/bruxasburger/controller/filiais/delete/$id/$nomeFilial', 'bruxasburger/app/controller/filiais/delete.php');
+get('/bruxasburger/controller/filiais/deleteImagem/$id', 'bruxasburger/app/controller/filiais/deleteImagem.php');
 post('/bruxasburger/controller/filiais/pesquisa', 'bruxasburger/app/controller/filiais/pesquisa.php');
-post('/bruxasburger/controller/filiais/update/$id', 'bruxasburger/app/controller/filiias/update.php');
+get('/bruxasburger/controller/filiais/update/$id', 'bruxasburger/app/controller/filiais/update.php');
 
 // CONTROLLER - ITENS CARDÁPIO
 post('/bruxasburger/controller/itens_cardapio/create', 'bruxasburger/app/controller/itens_cardapio/create.php');
-post('/bruxasburger/controller/itens_cardapio/delete/$id', 'bruxasburger/app/controller/itens_cardapio/delete.php');
+get('/bruxasburger/controller/itens_cardapio/delete/$id', 'bruxasburger/app/controller/itens_cardapio/delete.php');
 post('/bruxasburger/controller/itens_cardapio/pesquisa-por-categoria', 'bruxasburger/app/controller/itens_cardapio/pesquisa_por_categoria.php');
 post('/bruxasburger/controller/itens_cardapio/pesquisa', 'bruxasburger/app/controller/itens_cardapio/pesquisa.php');
-post('/bruxasburger/controller/itens_cardapio/update/$id', 'bruxasburger/app/controller/itens_cardapio/update.php');
+get('/bruxasburger/controller/itens_cardapio/update/$id', 'bruxasburger/app/controller/itens_cardapio/update.php');
 
 // CONTROLLER - USUARIOS
 post('/bruxasburger/controller/usuarios/login', 'bruxasburger/app/controller/usuarios/login.php');

@@ -24,7 +24,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
         </h1>
         <a href="/bruxasburger/gerenciamento/cardapio/itens" class="btn btn-light mb-3">Voltar</a>
         <?php
-        foreach ($itemCardapioDAO->filtrarItemCardapio($_GET['id_update_itemcardapio']) as $key => $itemCardapio) {
+        foreach ($itemCardapioDAO->filtrarItemCardapio($id) as $key => $itemCardapio) {
             include 'structure/form.php';
         }
         ?>

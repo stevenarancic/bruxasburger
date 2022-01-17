@@ -13,8 +13,8 @@
             Cardápio
         </h1>
         <a href="/bruxasburger/gerenciamento" class="btn btn-light">Voltar</a>
-        <a href="cardapio/categorias" class="btn btn-primary w-100 mb-3">Categorias</a>
-        <a href="cardapio/itens" class="btn btn-primary w-100 mb-3">Itens do cardápio</a>
+        <a href="/bruxasburger/gerenciamento/cardapio/categorias" class="btn btn-primary w-100 mb-3">Categorias</a>
+        <a href="/bruxasburger/gerenciamento/cardapio/itens" class="btn btn-primary w-100 mb-3">Itens do cardápio</a>
     </section>
 </body>
 

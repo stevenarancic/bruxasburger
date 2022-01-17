@@ -41,10 +41,9 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
                         <p class="card-text">
                             <?= $itemCardapio['descricao'] ?>
                         </p>
-                        <a href="update.php?id_update_itemcardapio=<?= $itemCardapio['item_id'] ?>"
+                        <a href="/bruxasburger/gerenciamento/cardapio/itens/update/<?= $itemCardapio['item_id'] ?>"
                             class="btn btn-light">Editar</a>
-
-                        <a href="../../../../controller/itens_cardapio/delete.php?id_delete_itemcardapio=<?= $itemCardapio['item_id'] ?>"
+                        <a href="/bruxasburger/controller/itens_cardapio/delete/<?= $itemCardapio['item_id'] ?>"
                             class="btn btn-danger">Apagar</a>
                     </div>
                 </div>

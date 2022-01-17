@@ -20,7 +20,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
             Gerenciamento de Filiais
         </h1>
         <a href="/bruxasburger/gerenciamento" class="btn btn-light">Voltar</a>
-        <a href="filiais/create" class="btn btn-success w-100 mb-3">Cadastrar filial</a>
+        <a href="/bruxasburger/gerenciamento/filiais/create" class="btn btn-success w-100 mb-3">Cadastrar filial</a>
 
         <?php foreach ($filialDAO->readFilial() as $key => $filial) { ?>
         <div class="card border-light mb-3 shadow-lg">
@@ -64,9 +64,9 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                             <?= $filial['rua'] ?> - <?= $filial['numero'] ?>, <?= $filial['bairro'] ?>
                         </h6>
                         <p class="card-text"><?= $filial['telefone'] ?></p>
-                        <a href="filiais/update/<?= $filial['id'] ?>" class="btn btn-light">Editar</a>
-                        <!-- <a href="../../../controller/filiais/delete.php?id_delete=<?= $filial['id'] ?>&nomeFilial=<?= $filial['cidade'] ?>" -->
-                        <a href="../controller/filiais/delete/<?= $filial['id'] ?>/<?= $filial['cidade'] ?>"
+                        <a href="/bruxasburger/gerenciamento/filiais/update/<?= $filial['id'] ?>"
+                            class="btn btn-light">Editar</a>
+                        <a href="/bruxasburger/controller/filiais/delete/<?= $filial['id'] ?>/<?= $filial['cidade'] ?>"
                             class="btn btn-danger">Apagar</a>
                     </div>
                 </div>

@@ -19,12 +19,12 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
             Gerenciamento de Categorias
         </h1>
         <div class="d-flex justify-content-between">
-            <a href="../home.php" class="btn btn-light">
+            <a href="/bruxasburger/gerenciamento/cardapio" class="btn btn-light">
                 Voltar
             </a>
             <div class="d-flex flex-row">
                 <div id="div_create_categoria">
-                    <form action="../../controller/categorias/create" method="post" class="d-flex flex-row">
+                    <form action="/bruxasburger/controller/categorias/create" method="post" class="d-flex flex-row">
                         Nome:
                         <input type="text" name="nome" class="form-control ms-2 me-2" style="width: 200px;">
                         Icone:
@@ -47,7 +47,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
                         &#<?= $categoria['icone'] ?>;
                     </p>
                     <div class="card-body">
-                        <form action="../../controller/categorias/update" method="post">
+                        <form action="/bruxasburger/controller/categorias/update" method="post">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" placeholder=" " name="icone"
                                     value="<?= $categoria['icone'] ?>">
@@ -70,7 +70,8 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
                             <button type="submit" class="btn btn-success">
                                 Salvar
                             </button>
-                            <a href="../../controller/categorias/delete/<?= $categoria['id'] ?>" class="btn btn-danger">
+                            <a href="/bruxasburger/controller/categorias/delete/<?= $categoria['id'] ?>"
+                                class="btn btn-danger">
                                 Apagar
                             </a>
                         </form>

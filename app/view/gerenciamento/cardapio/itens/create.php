@@ -20,7 +20,7 @@ $condicional = "create";
         <h1 class="p-5 d-flex justify-content-center">
             Cadastro de Item
         </h1>
-        <a href="home.php" class="btn btn-light mb-3">Voltar</a>
+        <a href="/bruxasburger/gerenciamento/cardapio/itens" class="btn btn-light mb-3">Voltar</a>
         <?php include 'app/view/gerenciamento/cardapio/itens/structure/form.php' ?>
     </section>
 </body>

@@ -22,7 +22,7 @@ $categoriaDAO = new \app\model\categorias\CategoriaDAO();
         <h1 class="p-5 d-flex justify-content-center">
             Editar Item
         </h1>
-        <a href="home.php" class="btn btn-light mb-3">Voltar</a>
+        <a href="/bruxasburger/gerenciamento/cardapio/itens" class="btn btn-light mb-3">Voltar</a>
         <?php
         foreach ($itemCardapioDAO->filtrarItemCardapio($_GET['id_update_itemcardapio']) as $key => $itemCardapio) {
             include 'structure/form.php';

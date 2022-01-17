@@ -20,7 +20,7 @@ $filialDAO = new \app\model\filiais\FilialDAO();
         <h1 class="p-5 d-flex justify-content-center">
             Editar filial
         </h1>
-        <a href="home" class="btn btn-light mb-3">Voltar</a>
+        <a href="/bruxasburger/gerenciamento/filiais" class="btn btn-light mb-3">Voltar</a>
 
         <?php
         foreach ($filialDAO->filtrarFilial($id) as $key => $filial) {

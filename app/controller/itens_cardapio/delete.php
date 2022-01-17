@@ -6,7 +6,7 @@ use app\model\Conexao;
 
 $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 
-$itemCardapioDAO->deleteImagemItemCardapio($_GET['id_delete_itemcardapio']);
-$itemCardapioDAO->deleteItemCardapio($_GET['id_delete_itemcardapio']);
+$itemCardapioDAO->deleteImagemItemCardapio($id);
+$itemCardapioDAO->deleteItemCardapio($id);
 
 header('location: /bruxasburger/gerenciamento/cardapio/itens');

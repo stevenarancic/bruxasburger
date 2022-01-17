@@ -16,7 +16,7 @@ $condicional = "create";
         <h1 class="p-5 d-flex justify-content-center">
             Cadastro de filial
         </h1>
-        <a href="home.php" class="btn btn-light mb-3">Voltar</a>
+        <a href="/bruxasburger/gerenciamento/filiais" class="btn btn-light mb-3">Voltar</a>
 
         <?php require_once 'app/view/gerenciamento/filiais/structure/form.php' ?>
     </section>

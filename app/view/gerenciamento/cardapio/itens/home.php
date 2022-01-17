@@ -18,9 +18,10 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
         <h1 class="p-5 d-flex justify-content-center">
             Itens do cardápio
         </h1>
-        <a href="../home.php" class="btn btn-light">Voltar</a>
+        <a href="/bruxasburger/gerenciamento/cardapio" class="btn btn-light">Voltar</a>
 
-        <a href="itens/create" class="btn btn-success w-100 mb-3 mt-3">Cadastrar Item</a>
+        <a href="/bruxasburger/gerenciamento/cardapio/itens/create" class="btn btn-success w-100 mb-3 mt-3">Cadastrar
+            Item</a>
 
         <?php foreach ($itemCardapioDAO->readItemCardapio() as $key => $itemCardapio) { ?>
         <div class="card mb-3" style="position: inherit">

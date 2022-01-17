@@ -16,13 +16,13 @@ $ultimoID = Conexao::getInstance()->lastInsertId();
 $total = count($_FILES['upload']['name']);
 
 // criando a pasta onde as pastas das imagens das filiais serão criadas.
-if (!file_exists("../../../assets/img/filiais/")) {
-    mkdir("../../../assets/img/filiais/", 0777, true);
+if (!file_exists(__DIR__ . "../../../../assets/img/filiais/")) {
+    mkdir(__DIR__ . "../../../../assets/img/filiais/", 0777, true);
 }
 
 // criando a pasta das imagens da filial cadastrada no momento
-if (!file_exists("../../../assets/img/filiais/{$_POST['cidade']}")) {
-    mkdir("../../../assets/img/filiais/{$_POST['cidade']}", 0777, true);
+if (!file_exists(__DIR__ . "../../../../assets/img/filiais/{$_POST['cidade']}")) {
+    mkdir(__DIR__ . "../../../../assets/img/filiais/{$_POST['cidade']}", 0777, true);
 }
 
 // loop para pegar todas as imagens enviadas para o cadastro
@@ -30,7 +30,7 @@ for ($i = 0; $i < $total; $i++) {
     $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
 
     if ($tmpFilePath != "") {
-        $newFilePath = "../../../assets/img/filiais/{$_POST['cidade']}/" . $_FILES['upload']['name'][$i];
+        $newFilePath = __DIR__ . "../../../../assets/img/filiais/{$_POST['cidade']}/" . $_FILES['upload']['name'][$i];
 
         move_uploaded_file($tmpFilePath, $newFilePath);
     }
@@ -41,4 +41,4 @@ for ($i = 0; $i < $total; $i++) {
     $imagemFilialDAO->createImagemFilial($imagemFilial);
 }
 
-header('location: ../../view/gerenciamento/filiais/home.php');
+header('location: /bruxasburger/gerenciamento/filiais');

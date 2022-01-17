@@ -7,4 +7,4 @@ $categoria->setId($_POST['id']);
 $categoriaDAO = new \app\model\categorias\CategoriaDAO();
 $categoriaDAO->updateCategoria($categoria);
 
-header('location: ../../../gerenciamento/cardapio/categorias');
+header('location: /bruxasburger/gerenciamento/cardapio/categorias/');

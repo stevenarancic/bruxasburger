@@ -15,7 +15,7 @@ $stmt->bindValue(':senha', $_POST['senha']);
 $stmt->execute();
 
 if ($stmt->rowCount() > 0) {
-    header("location: ../../../gerenciamento/home");
+    header('location: /bruxasburger/gerenciamento');
     $_SESSION['logado'] = "logado";
 } else {
     echo "Login incorreto!";

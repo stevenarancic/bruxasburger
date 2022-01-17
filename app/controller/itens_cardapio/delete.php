@@ -9,4 +9,4 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
 $itemCardapioDAO->deleteImagemItemCardapio($_GET['id_delete_itemcardapio']);
 $itemCardapioDAO->deleteItemCardapio($_GET['id_delete_itemcardapio']);
 
-header('location: ../../view/gerenciamento/cardapio/itens/home.php');
+header('location: /bruxasburger/gerenciamento/cardapio/itens');

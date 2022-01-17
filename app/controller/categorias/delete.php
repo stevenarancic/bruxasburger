@@ -4,4 +4,4 @@ require_once __DIR__ . "../../../../vendor/autoload.php";
 $categoriaDAO = new \app\model\categorias\CategoriaDAO();
 $categoriaDAO->deleteCategoria($id);
 
-header('location: ../../../gerenciamento/cardapio/categorias');
+header('location: /bruxasburger/gerenciamento/cardapio/categorias/');

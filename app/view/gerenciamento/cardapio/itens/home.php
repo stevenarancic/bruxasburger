@@ -27,7 +27,7 @@ $itemCardapioDAO = new \app\model\itens_cardapio\ItemCardapioDAO();
         <div class="card mb-3" style="position: inherit">
             <div class=" row g-0">
                 <div class="col-md-4">
-                    <img src="../../../../../assets/img/cardapio_itens/<?= $itemCardapio['imagem'] ?>"
+                    <img src="/bruxasburger/assets/img/cardapio_itens/<?= $itemCardapio['imagem'] ?>"
                         class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">

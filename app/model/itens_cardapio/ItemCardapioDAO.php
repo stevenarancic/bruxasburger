@@ -80,10 +80,10 @@ class ItemCardapioDAO
 
     public function createImagemItemCardapio($nomeDaImagem, $caminhoAtualImagem)
     {
-        $caminhoSalvamentoImagem = "../../../assets/img/cardapio_itens/{$nomeDaImagem}";
+        $caminhoSalvamentoImagem = "../../../../assets/img/cardapio_itens/{$nomeDaImagem}";
 
-        if (!file_exists('../../../assets/img/cardapio_itens/')) {
-            mkdir('../../../assets/img/cardapio_itens/', 0777, true);
+        if (!file_exists('../../../../assets/img/cardapio_itens/')) {
+            mkdir('../../../../assets/img/cardapio_itens/', 0777, true);
         }
 
         move_uploaded_file($caminhoAtualImagem, $caminhoSalvamentoImagem);
@@ -92,10 +92,10 @@ class ItemCardapioDAO
     public function updateImagemItemCardapio($nomeImagem)
     {
         $caminhoAtualImagem = $_FILES['imagem_item_cardapio']['tmp_name'];
-        $caminhoNovaImagem = "../../../assets/img/cardapio_itens/{$nomeImagem}";
+        $caminhoNovaImagem = "../../../../assets/img/cardapio_itens/{$nomeImagem}";
 
-        if (!file_exists('../../../assets/img/cardapio_itens/')) {
-            mkdir('../../../assets/img/cardapio_itens/', 0777, true);
+        if (!file_exists('../../../../assets/img/cardapio_itens/')) {
+            mkdir('../../../../assets/img/cardapio_itens/', 0777, true);
         }
 
         if (file_exists($caminhoNovaImagem)) {
@@ -122,7 +122,7 @@ class ItemCardapioDAO
 
         if ($stmt->rowCount() > 0) {
             foreach ($stmt->fetchAll(\PDO::FETCH_ASSOC) as $key => $item) {
-                unlink("../../../assets/img/cardapio_itens/{$item['imagem']}");
+                unlink("../../../../assets/img/cardapio_itens/{$item['imagem']}");
             }
         } else {
             return "Item não encontrado :(";

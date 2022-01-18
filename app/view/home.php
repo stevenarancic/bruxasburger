@@ -105,7 +105,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                 <div class="item">
                     <div class="col">
                         <div class="card shadow ms-3 me-3 mb-4 mt-4">
-                            <img src="assets/img/cardapio_itens/{{ itemCardapio.imagem }}" class="card-img-top"
+                            <img src="assets/img/cardapio_itens/<?= $itemCardapio['imagem'] ?>" class="card-img-top"
                                 alt="..." style="height: 20em; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $itemCardapio['item_nome'] ?></h5>

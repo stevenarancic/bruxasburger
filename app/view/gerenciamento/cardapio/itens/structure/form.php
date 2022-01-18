@@ -1,6 +1,5 @@
 <!-- Depois deixar o create "mudavel" para também poder ser um update.php -->
-<form action="/bruxasburger/controller/itens_cardapio/<?= $condicional ?>.php" method="post"
-    enctype="multipart/form-data">
+<form action="/bruxasburger/controller/itens_cardapio/<?= $condicional ?>" method="post" enctype="multipart/form-data">
     <div class="form-floating mb-3">
         <input type="text" class="form-control" placeholder=" " name="nome" value="<?php
 

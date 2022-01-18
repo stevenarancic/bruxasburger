@@ -32,6 +32,10 @@ get('/bruxasburger/gerenciamento/filiais/create', 'bruxasburger/app/view/gerenci
 get('/bruxasburger/gerenciamento/filiais/update/$id', 'bruxasburger/app/view/gerenciamento/filiais/update.php');
 
 // ##################################################
+// ##################################################
+// ##################################################
+// ##################################################
+// ##################################################
 
 // CONTROLLER - CATEGORIAS
 post('/bruxasburger/controller/categorias/create', 'bruxasburger/app/controller/categorias/create.php');

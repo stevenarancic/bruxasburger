@@ -106,7 +106,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                     <div class="col">
                         <div class="card shadow ms-3 me-3 mb-4 mt-4">
                             <img src="assets/img/cardapio_itens/<?= $itemCardapio['imagem'] ?>" class="card-img-top"
-                                alt="..." style="height: 20em; object-fit: cover;">
+                                alt="..." style="height: 30rem; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $itemCardapio['item_nome'] ?></h5>
                                 <h6 class="card-subtitle mb-2 text-muted">
@@ -127,22 +127,15 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
 
             <h2 class="text-center mt-5 mb-4">Quem somos</h2>
             <p class="myP">
-                O Bruxas Burger tem como missão trazer cada vez mais conforto e bem estar aos seus clientes, mantendo
-                sempre um
-                ótimo atendimento e buscando sempre ter os melhores preços para a satisfação de todos. Temos como
-                objetivo
-                expandir
-                nosso empreendimento e abrir filiais em diversos lugares do RS, SC e PR, para divulgar o trabalho
-                singular que
-                só o
-                Bruxas tem.
+                O Bruxa's Burger tem como missão trazer cada vez mais conforto e bem estar aos seus clientes, mantendo
+                sempre um ótimo atendimento e buscando sempre manter a melhor qualidade em nossos lanches para levar até
+                vocês um experiência fantástica.
                 <br>
-                Bruxas Burger foi fundado há mais de 25 anos no litoral norte de Imbé por duas irmãs que há oito anos
-                venderam o
-                mesmo para o atual proprietário: Edson Jacinto Herzogues. Tendo como sócios Carlos Fernando Noronha e
-                Yuri Lima
-                de
-                Noronha, proprietários da franquia em Porto Alegre.
+                Temos como objetivo expandir nosso empreendimento e abrir filiais em diversos lugares, para divulgar o
+                trabalho singular que só o Bruxas tem.
+                Bruxas Burger foi fundado em 1997 tendo como fundador Edson Jacinto Herzogues.
+                Hoje a marca Bruxas Burger está presente em Porto Alegre, Tramandai, Atlântida e Xangri-lá sendo a
+                matriz.
             </p>
             <!-- Filiais -->
             <h2 class="text-center mt-4">Encontre um Bruxas perto de você</h2>
@@ -156,7 +149,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                             <img src="assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
                                 class="img-fluid rounded card-img-top mb-3" alt="..." data-bs-toggle="modal"
                                 data-bs-target="#modalImagem<?= $filial['id'] ?>"
-                                style="height: 25rem; width: 100%; object-fit: cover">
+                                style="height: 30rem; width: 100%; object-fit: cover">
                             <?php } ?>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -177,7 +170,7 @@ $imagemFilialDAO = new \app\model\filiais\ImagemFilialDAO();
                             <img src="assets/img/filiais/<?= $filial['cidade'] ?>/<?= $itemImagem['nome'] ?>"
                                 class="img-fluid rounded card-img-top" alt="..." data-bs-toggle="modal"
                                 data-bs-target="#modalImagem<?= $filial['id'] ?>"
-                                style="height: 25rem; width: 100%; object-fit: cover">
+                                style="height: 30rem; width: 100%; object-fit: cover">
                             <?php
                                     }
                                 } ?>
